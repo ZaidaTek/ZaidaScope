@@ -7,6 +7,10 @@ Use your PC and Arduino as an Oscilloscope!
 
 
 
+![ZScope](https://github.com/ZaidaTek/ZScope/blob/master/ZScope-v20200706.png "ZScope-v20200706")
+
+
+
 Features
 
 1) 1-100 kHz combined measuring rate (75-80 kHz for 2+ channels)
