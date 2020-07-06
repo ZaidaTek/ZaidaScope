@@ -23,7 +23,7 @@ Features
 
 Quick Install Guide
 
-1) Download https://github.com/ZaidaTek/ZScope/blob/master/ZScope-v20200706.zip
+1) Download https://github.com/ZaidaTek/ZScope/raw/master/ZScope-v20200706.zip
 
 2) Extract to folder of your choice.
 
