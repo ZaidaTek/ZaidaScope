@@ -17,7 +17,7 @@ Features
 
 2) Up to eight channels simultaneously
 
-3) Basic trigger and cursor functions.
+3) Basic trigger and cursor functions
 
 
 
@@ -25,11 +25,11 @@ Quick Install Guide
 
 1) Download https://github.com/ZaidaTek/ZScope/raw/master/ZScope-v20200706.zip
 
-2) Extract to folder of your choice.
+2) Extract to folder of your choice
 
-3) Upload included at328p.ino file to your Arduino Uno/Nano or similiar AT328P.
+3) Upload included at328p.ino file to your Arduino Uno/Nano or similiar AT328P
 
-4) Execute ZScope.exe, choose your COM-Port, channel config and measuring rate, and click connect.
+4) Execute ZScope.exe, choose your COM-Port, channel config and measuring rate, and click Connect
 
 Note: If your Arduino uses an FTDI USB/Serial Chip, you need to adjust its latency from the default 16 ms to 1 ms for best performance.
 
