@@ -12,7 +12,7 @@ Use your PC and Arduino as an Oscilloscope!
 
 ## Features
 
-1) 1-100 kHz combined measuring rate (75-80 kHz for 2+ channels)
+1) 1-100 kHz combined measuring rate (up to 75-80 kHz for 2+ channels)
 
 2) Up to eight channels simultaneously
 
@@ -34,7 +34,7 @@ Use your PC and Arduino as an Oscilloscope!
 
 1) If your Arduino uses an FTDI USB/Serial Chip, you need to **adjust latency from the default 16 ms to 1 ms for best performance**. To do this, go to Device Manager, open COM port, go to Port Settings, click Advanced and adjust latency to 1 ms. USB/Serial chip CH340 does not have this issue, but has many COM communication errors at higher measuring rates.
 
-2) For higher measuring rates (ca. 2+ kHz) you may need to **add a voltage follower to your signal**, especially if your signal is high impedance, because the internal impedance of the Arduino will be very low at higher measuring rates. Following is an example of an eight channel voltage follower system with UV/OV protection for signals:
+2) For higher measuring rates (ca. 2+ kHz) you may need to **add a voltage follower to your signal**, especially if your signal is high impedance, because the internal impedance of the Arduino will be very low at higher measuring rates. Following is an example of an eight channel voltage follower system using two low-cost LM324A op-amps, a 10K input resistor and UV/OV protection using 1N4148 diodes. The bare minimum would require just an op-amp in a voltage following configuration.
 
 ![ZScope](https://github.com/ZaidaTek/ZScope/blob/master/ZScope-VoltageFollower.png "")
 
