@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<CodeBlocks_project_file>
+	<FileVersion major="1" minor="6" />
+	<Project>
+		<Option title="ZScope" />
+		<Option pch_mode="2" />
+		<Option compiler="gcc" />
+		<Build>
+			<Target title="Release">
+				<Option output="../ZScope" prefix_auto="1" extension_auto="1" />
+				<Option working_dir=".." />
+				<Option object_output="obj/" />
+				<Option type="0" />
+				<Option compiler="gcc" />
+				<Option projectCompilerOptionsRelation="0" />
+			</Target>
+		</Build>
+		<Compiler>
+			<Add option="-fno-exceptions" />
+			<Add option="-fexpensive-optimizations" />
+			<Add option="-flto" />
+			<Add option="-O3" />
+			<Add option="-Wfatal-errors" />
+			<Add option="-Wextra" />
+			<Add option="-Wall" />
+			<Add directory="../ZDK/ZTK" />
+			<Add directory="../ZDK/ZTL/ZDX" />
+			<Add directory="../ZDK/ZTM" />
+		</Compiler>
+		<ResourceCompiler>
+			<Add directory="../ZDK/ZTK" />
+			<Add directory="../ZDK/ZTM" />
+		</ResourceCompiler>
+		<Linker>
+			<Add option="-O3" />
+			<Add option="-flto" />
+			<Add option="-s" />
+			<Add option="-lZTM -lZDX -lZTK" />
+			<Add directory=".." />
+		</Linker>
+		<Unit filename="ZScope.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="ZScope.h" />
+		<Unit filename="ZScopeResources.rc">
+			<Option compilerVar="WINDRES" />
+		</Unit>
+		<Unit filename="ZScope_Device.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="ZScope_Device.h" />
+		<Unit filename="ZScope_Diagram.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="ZScope_Diagram.h" />
+		<Unit filename="ZScope_GUI.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="ZScope_GUI.h" />
+		<Unit filename="ZScope_Text.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="ZScope_Text.h" />
+		<Unit filename="ZScope__Defines.h" />
+		<Unit filename="ZScope__Types.h" />
+		<Extensions>
+			<code_completion />
+			<envvars />
+			<debugger />
+			<lib_finder disable_auto="1" />
+		</Extensions>
+	</Project>
+</CodeBlocks_project_file>
