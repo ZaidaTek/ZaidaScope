@@ -35,7 +35,9 @@ Notes
 
 1) If your Arduino uses an FTDI USB/Serial Chip, you need to adjust its latency from the default 16 ms to 1 ms for best performance. To do this, go to Device Manager, open COM port, go to Port Settings, click Advanced and adjust latency to 1 ms. USB/Serial chip CH340 does not have this issue, but has many COM communication errors at higher measuring rates.
 
-2) For higher measuring rates (ca. 2+ kHz) you will need to add a voltage follower to your signal, because the internal impedance of the Arduino will be too low to read a high impedance measurement signal.
+2) For higher measuring rates (ca. 2+ kHz) you may need to add a voltage follower to your signal, especially if your signal is high impedance, because the internal impedance of the Arduino will be very low. Following is an example of an eight channel voltage follower system with UV/OV protection for signals.
+
+![ZScope](https://github.com/ZaidaTek/ZScope/blob/master/ZScope-VoltageFollower.png "")
 
 
 
