@@ -1,5 +1,4 @@
 # ZScope
-ZaidaTek ZScope
 
 
 
