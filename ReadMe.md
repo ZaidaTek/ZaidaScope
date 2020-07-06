@@ -1,4 +1,4 @@
-# ZDK
+# ZScope
 ZaidaTek ZScope
 
 Copyright (C) 2019-2020 ZaidaTek and Andreas Riebesehl
