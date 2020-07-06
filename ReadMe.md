@@ -12,7 +12,7 @@ Use your PC and Arduino as an Oscilloscope!
 
 ## Features
 
-1) 1-100 kHz combined measuring rate (up to 75-80 kHz for 2+ channels)
+1) 1-100 kHz measuring rate (up to 75-80 kHz for 2+ channels)
 
 2) Up to eight channels simultaneously
 
