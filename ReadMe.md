@@ -11,7 +11,7 @@ Use your PC and Arduino as an Oscilloscope!
 
 
 
-Features
+## Features
 
 1) 1-100 kHz combined measuring rate (75-80 kHz for 2+ channels)
 
@@ -21,7 +21,7 @@ Features
 
 
 
-Quick Install Guide
+## Quick Install Guide
 
 1) Download https://github.com/ZaidaTek/ZScope/raw/master/ZScope-v20200706.zip
 
@@ -31,23 +31,24 @@ Quick Install Guide
 
 4) Execute ZScope.exe, choose your COM-Port, channel config and measuring rate, and click Connect
 
-Notes
+## Notes
 
-1) If your Arduino uses an FTDI USB/Serial Chip, you need to adjust its latency from the default 16 ms to 1 ms for best performance. To do this, go to Device Manager, open COM port, go to Port Settings, click Advanced and adjust latency to 1 ms. USB/Serial chip CH340 does not have this issue, but has many COM communication errors at higher measuring rates.
+1) If your Arduino uses an FTDI USB/Serial Chip, you need to **adjust latency from the default 16 ms to 1 ms for best performance**. To do this, go to Device Manager, open COM port, go to Port Settings, click Advanced and adjust latency to 1 ms. USB/Serial chip CH340 does not have this issue, but has many COM communication errors at higher measuring rates.
 
-2) For higher measuring rates (ca. 2+ kHz) you may need to add a voltage follower to your signal, especially if your signal is high impedance, because the internal impedance of the Arduino will be very low. Following is an example of an eight channel voltage follower system with UV/OV protection for signals.
+2) For higher measuring rates (ca. 2+ kHz) you may need to **add a voltage follower to your signal**, especially if your signal is high impedance, because the internal impedance of the Arduino will be very low at higher measuring rates. Following is an example of an eight channel voltage follower system with UV/OV protection for signals:
 
 ![ZScope](https://github.com/ZaidaTek/ZScope/blob/master/ZScope-VoltageFollower.png "")
 
 
 
-Requirements
+## Requirements
 
 1) Windows 7 or newer operating system (Tested on Windows 7 and Windows 10 systems)
 
 2) Arduino Uno/Nano/other AT328P systems
 
 
+## About
 
 Copyright (C) 2019-2020 ZaidaTek and Andreas Riebesehl
 
