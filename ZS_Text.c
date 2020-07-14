@@ -2,10 +2,10 @@
 **** This work is licensed under: Creative Commons Attribution-NoDerivatives 4.0 International Public License
 **** For full license text, please visit: https://creativecommons.org/licenses/by-nd/4.0/legalcode
 ***/
-#ifndef ZSCOPE_TEXT_C_INCLUDED
-#define ZSCOPE_TEXT_C_INCLUDED
+#ifndef ZS_TEXT_C_INCLUDED
+#define ZS_TEXT_C_INCLUDED
 
-#include "ZScope_Text.h"
+#include "ZS_Text.h"
 
 void ZSTXT_Load(ZSCOPE_TEXT* iHive, ZT_FLAG iLang) {
 	if (iHive != NULL) {
@@ -67,4 +67,4 @@ void ZSTXT_Load(ZSCOPE_TEXT* iHive, ZT_FLAG iLang) {
     }
 }
 
-#endif //ZSCOPE_TEXT_C_INCLUDED
+#endif //ZS_TEXT_C_INCLUDED

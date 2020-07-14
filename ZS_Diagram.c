@@ -2,10 +2,10 @@
 **** This work is licensed under: Creative Commons Attribution-NoDerivatives 4.0 International Public License
 **** For full license text, please visit: https://creativecommons.org/licenses/by-nd/4.0/legalcode
 ***/
-#ifndef ZSCOPE_DIAGRAM_C_INCLUDED
-#define ZSCOPE_DIAGRAM_C_INCLUDED
+#ifndef ZS_DIAGRAM_C_INCLUDED
+#define ZS_DIAGRAM_C_INCLUDED
 
-#include "ZScope_Diagram.h"
+#include "ZS_Diagram.h"
 
 void ZSDIA_Defaults(void) {
     gDia.grid.major.xU = 10;
@@ -102,4 +102,4 @@ void ZSDIA_Move(ZT_I iIncrement) {
     }
 }
 
-#endif //ZSCOPE_DIAGRAM_C_INCLUDED
+#endif //ZS_DIAGRAM_C_INCLUDED

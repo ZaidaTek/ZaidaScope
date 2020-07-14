@@ -2,8 +2,8 @@
 **** This work is licensed under: Creative Commons Attribution-NoDerivatives 4.0 International Public License
 **** For full license text, please visit: https://creativecommons.org/licenses/by-nd/4.0/legalcode
 ***/
-#ifndef ZSCOPE_H_INCLUDED
-#define ZSCOPE_H_INCLUDED
+#ifndef ZS_H_INCLUDED
+#define ZS_H_INCLUDED
 
 #include <ZTK.h>
 #include <ZDX.h>
@@ -13,13 +13,13 @@
 #define ZSCOPE_DEFAULT_CONFIG 0x1
 #define ZSCOPE_DEFAULT_SPEED 100000
 
-#include "ZScope__Defines.h"
-#include "ZScope__Types.h"
+#include "ZS__Defines.h"
+#include "ZS__Types.h"
 
-#include "ZScope_Text.h"
-#include "ZScope_GUI.h"
-#include "ZScope_Device.h"
-#include "ZScope_Diagram.h"
+#include "ZS_Text.h"
+#include "ZS_GUI.h"
+#include "ZS_Device.h"
+#include "ZS_Diagram.h"
 
 ZSCOPE_APP gApp;
 ZSCOPE_GUI gGUI;
@@ -40,4 +40,4 @@ void ZSUSR_Menu(ZT_INDEX iSelection);
 void ZS_EventGUI(void);
 void ZS_Event(void);
 
-#endif // ZSCOPE_H_INCLUDED
+#endif // ZS_H_INCLUDED

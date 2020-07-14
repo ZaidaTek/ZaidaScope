@@ -2,23 +2,21 @@
 **** This work is licensed under: Creative Commons Attribution-NoDerivatives 4.0 International Public License
 **** For full license text, please visit: https://creativecommons.org/licenses/by-nd/4.0/legalcode
 ***/
-#ifndef ZSCOPE_DIAGRAM_H_INCLUDED
-#define ZSCOPE_DIAGRAM_H_INCLUDED
+#ifndef ZS_GUI_H_INCLUDED
+#define ZS_GUI_H_INCLUDED
 
-#include "ZScope.h"
+#include "ZS.h"
 
 #ifdef __cplusplus
 extern "C" {
 #endif // __cplusplus
-void ZSDIA_Init(void);
-void ZSDIA_Exit(void);
-void ZSDIA_Reset(void);
-void ZSDIA_Grid(void);
-void ZSDIA_Move(ZT_I iIncrement);
+void ZSGUI_Init(void);
+void ZSGUI_Size(void);
+void ZSGUI_Menu(void);
+void ZSGUI_Exit(void);
+void ZSGUI_Event(void);
 #ifdef __cplusplus
 }
 #endif // __cplusplus
 
-#endif //ZSCOPE_DIAGRAM_H_INCLUDED
-
-
+#endif //ZS_GUI_H_INCLUDED

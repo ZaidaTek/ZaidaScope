@@ -2,10 +2,10 @@
 **** This work is licensed under: Creative Commons Attribution-NoDerivatives 4.0 International Public License
 **** For full license text, please visit: https://creativecommons.org/licenses/by-nd/4.0/legalcode
 ***/
-#ifndef ZSCOPE__TYPES_H_INCLUDED
-#define ZSCOPE__TYPES_H_INCLUDED
+#ifndef ZS__TYPES_H_INCLUDED
+#define ZS__TYPES_H_INCLUDED
 
-#include "ZScope.h"
+#include "ZS.h"
 
 typedef struct {
     ZDX_DEVICE* hardware;
@@ -291,4 +291,4 @@ typedef struct {
     } rect;
 } ZSCOPE_APP;
 
-#endif // ZSCOPE__TYPES_H_INCLUDED
+#endif // ZS__TYPES_H_INCLUDED

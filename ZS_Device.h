@@ -2,10 +2,10 @@
 **** This work is licensed under: Creative Commons Attribution-NoDerivatives 4.0 International Public License
 **** For full license text, please visit: https://creativecommons.org/licenses/by-nd/4.0/legalcode
 ***/
-#ifndef ZSCOPE_DEVICE_H_INCLUDED
-#define ZSCOPE_DEVICE_H_INCLUDED
+#ifndef ZS_DEVICE_H_INCLUDED
+#define ZS_DEVICE_H_INCLUDED
 
-#include "ZScope.h"
+#include "ZS.h"
 
 #ifdef __cplusplus
 extern "C" {
@@ -25,5 +25,5 @@ void ZSDEV_TriggerFlank(ZT_FLAG iType);
 }
 #endif // __cplusplus
 
-#endif //ZSCOPE_DEVICE_H_INCLUDED
+#endif //ZS_DEVICE_H_INCLUDED
 

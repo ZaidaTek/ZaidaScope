@@ -1,5 +1,5 @@
 #include "../ZTK/ZTK.h"
 
 #if (defined _WIN32 || defined _WIN64)
-ZTK_DEFAULT_WINDOW_ICON_INTEGRATED_ID ICON ZScope.ico
+ZTK_DEFAULT_WINDOW_ICON_INTEGRATED_ID ICON ZS.ico
 #endif // (defined _WIN32 || defined _WIN64)

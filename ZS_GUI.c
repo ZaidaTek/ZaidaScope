@@ -2,10 +2,10 @@
 **** This work is licensed under: Creative Commons Attribution-NoDerivatives 4.0 International Public License
 **** For full license text, please visit: https://creativecommons.org/licenses/by-nd/4.0/legalcode
 ***/
-#ifndef ZSCOPE_GUI_C_INCLUDED
-#define ZSCOPE_GUI_C_INCLUDED
+#ifndef ZS_GUI_C_INCLUDED
+#define ZS_GUI_C_INCLUDED
 
-#include "ZScope_GUI.h"
+#include "ZS_GUI.h"
 void ZSGUI_InitMenu(void) {
     gGUI.menu.box = ZUI_BoxNew(ZSCOPE_ID_MENU_BOX, NULL, 0x101010bf, 0xffffffff);
     gGUI.menu.title = ZUI_LabelNewFromFont(0, NULL, gTxt.menu.title, gApp.font.title);
@@ -277,4 +277,4 @@ void ZSGUI_Exit(void) {
     ZTK_FontFree(gApp.font.title);
     ZTK_FontFree(gApp.font.desc);
 }
-#endif // ZSCOPE_GUI_C_INCLUDED
+#endif // ZS_GUI_C_INCLUDED

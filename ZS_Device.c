@@ -2,10 +2,10 @@
 **** This work is licensed under: Creative Commons Attribution-NoDerivatives 4.0 International Public License
 **** For full license text, please visit: https://creativecommons.org/licenses/by-nd/4.0/legalcode
 ***/
-#ifndef ZSCOPE_DEVICE_C_INCLUDED
-#define ZSCOPE_DEVICE_C_INCLUDED
+#ifndef ZS_DEVICE_C_INCLUDED
+#define ZS_DEVICE_C_INCLUDED
 
-#include "ZScope_Device.h"
+#include "ZS_Device.h"
 
 void ZSDEV_Capture(ZT_FLAG iState) {
     switch (iState) {
@@ -153,5 +153,5 @@ void ZSDEV_TriggerFlank(ZT_FLAG iType) {
     }
 }
 
-#endif //ZSCOPE_DEVICE_C_INCLUDED
+#endif //ZS_DEVICE_C_INCLUDED
 

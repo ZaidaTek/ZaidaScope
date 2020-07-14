@@ -2,8 +2,8 @@
 **** This work is licensed under: Creative Commons Attribution-NoDerivatives 4.0 International Public License
 **** For full license text, please visit: https://creativecommons.org/licenses/by-nd/4.0/legalcode
 ***/
-#ifndef ZSCOPE__DEFINES_H_INCLUDED
-#define ZSCOPE__DEFINES_H_INCLUDED
+#ifndef ZS__DEFINES_H_INCLUDED
+#define ZS__DEFINES_H_INCLUDED
 
 #define ZSCOPE_FONT_WINDOW ZTK_DEFAULT_WINDOW_TEXT_FONT
 #define ZSCOPE_FONT_TITLE ZTK_DEFAULT_WINDOW_TEXT_FONT
@@ -89,4 +89,4 @@
 #define ZSCOPE_DEFAULT_MENU (ZSCOPE_MENU_DEVICE)
 #define ZSCOPE_DEFAULT_HUD (ZSCOPE_HUD_TRIGGER)
 
-#endif // ZSCOPE__DEFINES_H_INCLUDED
+#endif // ZS__DEFINES_H_INCLUDED

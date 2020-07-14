@@ -2,10 +2,10 @@
 **** This work is licensed under: Creative Commons Attribution-NoDerivatives 4.0 International Public License
 **** For full license text, please visit: https://creativecommons.org/licenses/by-nd/4.0/legalcode
 ***/
-#ifndef ZSCOPE_C_INCLUDED
-#define ZSCOPE_C_INCLUDED
+#ifndef ZS_C_INCLUDED
+#define ZS_C_INCLUDED
 
-#include "ZScope.h"
+#include "ZS.h"
 
 int main(void) {
 	ZS_Init();
@@ -418,4 +418,4 @@ void ZS_Event(void) {
     }
 }
 
-#endif // ZSCOPE_C_INCLUDED
+#endif // ZS_C_INCLUDED
