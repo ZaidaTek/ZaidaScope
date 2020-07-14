@@ -28,7 +28,7 @@ Use your PC and Arduino as an Oscilloscope!
 
 3) Upload included at328p.ino file to your Arduino Uno/Nano or similar AT328P
 
-4) Execute ZScope.exe, choose your COM-Port, channel config and sampling rate, and click Connect
+4) Execute ZS.exe, choose your COM-Port, channel config and sampling rate, and click Connect
 
 ## Notes
 
