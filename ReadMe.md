@@ -6,7 +6,7 @@ Use your PC and Arduino as an Oscilloscope!
 
 
 
-![ZaidaScope](https://github.com/ZaidaTek/ZScope/blob/master/ZScope-v20200706.png "ZS-latest")
+![ZaidaScope](https://github.com/ZaidaTek/ZScope/blob/master/ZScope-v20200706.png "ZS-latest.png")
 
 
 
