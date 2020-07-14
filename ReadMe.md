@@ -6,7 +6,7 @@ Use your PC and Arduino as an Oscilloscope!
 
 
 
-![ZaidaScope](https://github.com/ZaidaTek/ZScope/blob/master/ZScope-v20200706.png "ZS-latest.png")
+![ZaidaScope](https://github.com/ZaidaTek/ZaidaScope/blob/master/ZS-latest.png "")
 
 
 
@@ -22,7 +22,7 @@ Use your PC and Arduino as an Oscilloscope!
 
 ## Quick Install Guide
 
-1) Download https://github.com/ZaidaTek/ZaidaScope/raw/master/ZScope-v20200706.zip
+1) Download https://github.com/ZaidaTek/ZaidaScope/raw/master/ZS-latest.zip
 
 2) Extract to folder of your choice
 
@@ -36,7 +36,7 @@ Use your PC and Arduino as an Oscilloscope!
 
 2) For higher sampling rates you may need to **add a voltage follower to your signal**, especially if your signal is high impedance, because the internal impedance of the Arduino will be very low at higher sampling rates. Otherwise, your signal will drop to zero volts. Following is an example of an eight channel voltage follower system using two low-cost LM324A op-amps, a 10K input resistor and UV/OV protection using 1N4148 diodes. The bare minimum would require just an op-amp in a voltage following configuration.
 
-![ZaidaScope](https://github.com/ZaidaTek/ZScope/blob/master/ZS-VoltageFollower.png "")
+![ZaidaScope](https://github.com/ZaidaTek/ZaidaScope/blob/master/ZS-VoltageFollower.png "")
 
 
 
