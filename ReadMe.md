@@ -84,7 +84,7 @@ Visit our website https://zaidatek.net/ for contact details if you require a sim
 
 
 
-## About
+## License
 
 Copyright (C) 2019-2020 ZaidaTek and Andreas Riebesehl
 
