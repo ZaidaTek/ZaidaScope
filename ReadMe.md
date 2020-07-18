@@ -64,13 +64,13 @@ The simplified electric schematic for the above is as follows:
 
 C1, R1 and R2 are required in order to get the audio signal centered around 2.5V, instead of the normal 0V.
 
-On the PCB, the input signal is protected from undervoltage/overvoltage with D1 and D2. These ensure that the signal does not go under -0.5V or over 5.5V. In the case that this does happen, R3 prevents the current flowing through D1/D2 from getting too high.
+On the PCB, the input signal is protected from undervoltage/overvoltage with D2 and D1. These ensure that the signal does not go under -0.5V or over 5.5V. In the case that this does happen, R3 prevents the current flowing through D2/D1 from getting too high.
 
 Protecting the input signal from UV/OV is important, because the LM324A op-amp can push up to 50mA into the AT328P analog input, and damage it. If you can guarantee that your measurement signal never goes under 0V or over 5V, you can ignore these components.
 
-The LM324A is configured in a voltage follower/unity gain configuration, and thus provides the measurement signal with a higher impedance than a raw connection to the AT328P's analog input. In order to correctly mirror a 5V signal, the op-amp must be powered by a voltage higher than 5V (V_BOOST). The exact voltage depends on the type of op-amp used and also individually varies from op-amp to op-amp. An SX1308 DC-DC Step-Up module was used for this purpose, and provides the LM324A with about 6.3V. A higher voltage can be used, if the circuit's integrity can be guaranteed.
+The LM324A is configured in a voltage follower/unity gain configuration, and thus provides the measurement signal with a higher impedance than a raw connection to the AT328P's analog input. In order to correctly mirror a 5V signal, the op-amp must be powered by a voltage higher than 5V (V_Boost). The exact voltage depends on the type of op-amp used and also individually varies from op-amp to op-amp. An SX1308 DC-DC Step-Up module was used for this purpose, and in this case provides the LM324A with about 6.3V. A higher voltage, such as 12V, can be used, if the circuit's integrity can be guaranteed.
 
-Be advised that if the circuit's integrity is compromised, the op-amp may output V_BOOST into the AT328P, and damage it.
+Be advised that if the circuit's integrity is compromised, the op-amp may output V_Boost into the AT328P, and damage it.
 
 
 ## About
