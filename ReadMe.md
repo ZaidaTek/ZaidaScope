@@ -76,7 +76,7 @@ Be advised that if the circuit's integrity is compromised, the op-amp may output
 
 ## Background
 
-ZaidaScope is an open-source software that was born out of the libraries of a commercial client's request for a **low-cost alternative to using traditional and expensive aftermarket DAQ hard- and software** to monitor analog input channels on a PC.
+ZaidaScope is an open-source software that was born out of the libraries created for a commercial client's request for a **low-cost alternative to using traditional and expensive aftermarket DAQ hard- and software** to monitor analog input channels on a PC.
 
 The AT328P was chosen, as its low cost, abundance, bit-depth and sampling rate were all deemed to be sufficient for the task.
 
