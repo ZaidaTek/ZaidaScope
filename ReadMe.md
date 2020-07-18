@@ -50,9 +50,9 @@ Use your PC and Arduino as an Oscilloscope!
 
 ## Setup (Optional)
 
-When using higher sampling rates, it may be necessary to add a voltage follower to the input signal, so as to not 
+When using higher sampling rates, it may be necessary to add a voltage follower to the input signal, so as to not compromise the original measurement signal.
 
-The screenshot above was created by reading my laptop's left channel audio output at a rate of 40,000 kHz while continously looping a generated 440 Hz sine wave using the program Audacity. This is how it looks like:
+The screenshot above was created by reading my laptop's left channel audio output at a rate of 40,000 kHz while continously looping a generated 440 Hz sine wave using the program Audacity. This is how it the setup looks like:
 
 ![ZaidaScope](https://github.com/ZaidaTek/ZaidaScope/blob/master/ZS-Setup.jpg "")
 
@@ -62,7 +62,7 @@ The simplified electric schematic for the above is as follows:
 
 ![ZaidaScope](https://github.com/ZaidaTek/ZaidaScope/blob/master/ZS-Setup.png "")
 
-C1, R1 and R2 are required in order to get the audio signal centered around 2.5V (as it normally is centered around 0V).
+C1, R1 and R2 are required in order to get the audio signal centered around 2.5V, instead of the normal 0V.
 
 On the PCB, the input signal is protected from undervoltage/overvoltage with D1 and D2. These ensure that the signal does not go under -0.5V or over 5.5V. In the case that this does happen, R3 prevents the current flowing through D1/D2 from getting too high.
 
