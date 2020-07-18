@@ -44,7 +44,7 @@ Use your PC and Arduino as an Oscilloscope!
 
 1) If your Arduino uses an FTDI USB/Serial Chip, you need to **adjust latency from the default 16 ms to 1 ms for best performance**. To do this, go to Device Manager, open COM port, go to Port Settings, click Advanced and adjust latency to 1 ms. USB/Serial chip CH340 does not have this issue, but has many COM communication errors at higher sampling rates.
 
-2) For higher sampling rates you may need to **add a voltage follower to your signal**, especially if your signal is high impedance, because the internal impedance of the Arduino will be very low at higher sampling rates. Otherwise, your signal can drop to zero volts. See Setup for details on this.
+2) For higher sampling rates you may need to **add a voltage follower to your signal**, especially if your signal is high impedance, because the internal impedance of the Arduino will be very low at higher sampling rates. Otherwise, your signal can drop to zero volts. See below for details on this.
 
 
 
@@ -52,7 +52,7 @@ Use your PC and Arduino as an Oscilloscope!
 
 When using higher sampling rates, it may be necessary to add a voltage follower to the input signal, so as to not compromise the original measurement signal.
 
-The screenshot above was created by reading my laptop's left channel audio output at a rate of 40,000 kHz while continously looping a generated 440 Hz sine wave using the program Audacity. This is how it the setup looks like:
+The screenshot above was created by reading my laptop's left channel audio output at a rate of 40 kHz while continously looping a generated 440 Hz sine wave using the program Audacity. This is how it the setup looks like:
 
 ![ZaidaScope](https://github.com/ZaidaTek/ZaidaScope/blob/master/ZS-Setup.jpg "")
 
