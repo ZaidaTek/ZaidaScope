@@ -56,7 +56,7 @@ The screenshot above was created by reading my laptop's left channel audio outpu
 
 ![ZaidaScope](https://github.com/ZaidaTek/ZaidaScope/blob/master/ZS-Setup.jpg "")
 
-The AT328P used on this board is an Arduino Pro Mini as well as a FTDI232 USB/Serial converter for communication, an SX1308 DC-DC Step-Up boost converter for powering the two LM324A op-amps and a number of Diodes, Resistors, Capacitors and LEDs.
+The AT328P used on this board is an Arduino Pro Mini as well as a FTDI232 USB/Serial converter for communication, an SX1308 DC-DC step-up boost converter for powering the two LM324A op-amps, a number of diodes, resistors, capacitors and an LED.
 
 The simplified electric schematic for the above is as follows:
 
@@ -71,6 +71,17 @@ Protecting the input signal from UV/OV is important, because the LM324A op-amp c
 The LM324A is configured in a voltage follower/unity gain configuration, and thus provides the measurement signal with a higher impedance than a raw connection to the AT328P's analog input. In order to correctly mirror an input signal up to 5V, the op-amp must be powered by a voltage higher than 5V (V_Boost). The exact voltage depends on the type of op-amp used and also individually varies from op-amp to op-amp. An SX1308 DC-DC Step-Up module was used for this purpose, and in this case provides the LM324A with about 6.3V. A higher voltage, such as 12V, can be used, if the circuit's integrity can be guaranteed.
 
 Be advised that if the circuit's integrity is compromised, the op-amp may output V_Boost into the AT328P, and damage it.
+
+
+
+## Background
+
+ZaidaScope is an open-source software that was born out of the libraries of a commercial client's request for a **low-cost alternative to using traditional and expensive aftermarket DAQ hard- and software** to monitor analog input channels on a PC.
+
+The AT328P was chosen, as its low cost, abundance, bit-depth and sampling rate were all deemed to be sufficient for the task.
+
+Visit our website https://zaidatek.net/ for contact details if you require a similar solution.
+
 
 
 ## About
