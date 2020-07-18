@@ -80,7 +80,7 @@ ZaidaScope is an open-source software that was born out of the libraries of a co
 
 The AT328P was chosen, as its low cost, abundance, bit-depth and sampling rate were all deemed to be sufficient for the task.
 
-Visit our website https://zaidatek.net/ for contact details if you require a similar solution.
+Visit our website https://zaidatek.net/ for contact details if you require a similar custom solution.
 
 
 
