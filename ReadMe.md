@@ -56,7 +56,7 @@ The screenshot above was created by reading my laptop's left channel audio outpu
 
 ![ZaidaScope](https://github.com/ZaidaTek/ZaidaScope/blob/master/ZS-Setup.jpg "")
 
-The AT328P used on this board is an Arduino Pro Mini, a FTDI232 USB/Serial converter, an SX1308 DC-DC Step-Up boost converter, two LM324A op-amps and a number of Diodes, Resistors, Capacitors and LEDs.
+The AT328P used on this board is an Arduino Pro Mini as well as a FTDI232 USB/Serial converter for communication, an SX1308 DC-DC Step-Up boost converter for powering the two LM324A op-amps and a number of Diodes, Resistors, Capacitors and LEDs.
 
 The simplified electric schematic for the above is as follows:
 
@@ -68,7 +68,7 @@ On the PCB, the input signal is protected from undervoltage/overvoltage with D2 
 
 Protecting the input signal from UV/OV is important, because the LM324A op-amp can push up to 50mA into the AT328P analog input, and damage it. If you can guarantee that your measurement signal never goes under 0V or over 5V, you can ignore these components.
 
-The LM324A is configured in a voltage follower/unity gain configuration, and thus provides the measurement signal with a higher impedance than a raw connection to the AT328P's analog input. In order to correctly mirror a 5V signal, the op-amp must be powered by a voltage higher than 5V (V_Boost). The exact voltage depends on the type of op-amp used and also individually varies from op-amp to op-amp. An SX1308 DC-DC Step-Up module was used for this purpose, and in this case provides the LM324A with about 6.3V. A higher voltage, such as 12V, can be used, if the circuit's integrity can be guaranteed.
+The LM324A is configured in a voltage follower/unity gain configuration, and thus provides the measurement signal with a higher impedance than a raw connection to the AT328P's analog input. In order to correctly mirror an input signal up to 5V, the op-amp must be powered by a voltage higher than 5V (V_Boost). The exact voltage depends on the type of op-amp used and also individually varies from op-amp to op-amp. An SX1308 DC-DC Step-Up module was used for this purpose, and in this case provides the LM324A with about 6.3V. A higher voltage, such as 12V, can be used, if the circuit's integrity can be guaranteed.
 
 Be advised that if the circuit's integrity is compromised, the op-amp may output V_Boost into the AT328P, and damage it.
 
