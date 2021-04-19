@@ -1,4 +1,4 @@
-/*** Copyright (C) 2019-2020 ZaidaTek and Andreas Riebesehl
+/*** Copyright (C) 2019-2021 ZaidaTek and Andreas Riebesehl
 **** This work is licensed under: Creative Commons Attribution-NoDerivatives 4.0 International Public License
 **** For full license text, please visit: https://creativecommons.org/licenses/by-nd/4.0/legalcode
 ***/
@@ -11,19 +11,38 @@ typedef struct {
     ZDX_DEVICE* hardware;
     ZDX_DATA* data;
     ZDX_TRIGGER* trigger;
+    ZT_WEAVE* recorder;
     ZT_FLAG flag;
     struct {
         ZT_TIME connect;
         ZT_TIME trigger;
+        ZT_TIME record;
     } timestamp;
     struct {
         ZT_INDEX trigger;
+        ZT_TIME record;
     } counter;
     struct {
         ZT_INDEX trigger;
     } stat;
+    struct {
+        ZT_CHAR* record;
+    } path;
 } ZSCOPE_DEVICE;
-
+typedef struct {
+    struct {
+        ZT_COLOR major;
+        ZT_COLOR minor;
+    } grid;
+    struct {
+        ZT_COLOR data;
+        ZT_COLOR first;
+        ZT_COLOR second;
+    } cursor;
+    ZT_COLOR background;
+    ZT_COLOR trigger;
+    ZT_COLOR plot[8];
+} ZSCOPE_DIAGRAM_COLOR;
 typedef struct {
     ZT_SURFACE* plot;
     ZDX_DIAGRAM* diagram;
@@ -39,131 +58,24 @@ typedef struct {
         ZT_POINT major;
         ZT_POINT minor;
     } grid;
-    struct {
-        struct {
-            ZT_COLOR major;
-            ZT_COLOR minor;
-        } grid;
-        struct {
-            ZT_COLOR data;
-            ZT_COLOR first;
-            ZT_COLOR second;
-        } cursor;
-        ZT_COLOR background;
-        ZT_COLOR trigger;
-        ZT_COLOR plot[8];
-    } color;
+    ZSCOPE_DIAGRAM_COLOR color;
 } ZSCOPE_DIAGRAM;
 
 typedef struct {
     ZT_FLAG flag;
     ZT_FLAG lang;
-    ZT_FLAG menu;
+    ZT_FLAG hud;
+    ZT_FLAG renderer;
+    struct {
+        ZT_U address;
+        ZT_U speed;
+        ZT_U channel;
+    } device;
+    struct {
+        ZT_U unit;
+    } measure;
+    ZSCOPE_DIAGRAM_COLOR color;
 } ZSCOPE_USER;
-
-typedef struct {
-	struct {
-		const ZT_CHAR* title;
-		struct {
-			const ZT_CHAR* device;
-			const ZT_CHAR* help;
-			const ZT_CHAR* credits;
-			const ZT_CHAR* exit;
-		} head;
-		struct {
-			const ZT_CHAR* connect;
-			const ZT_CHAR* disconnect;
-			struct {
-			    struct {
-			        const ZT_CHAR* title;
-			    } address;
-			    struct {
-			        const ZT_CHAR* title;
-			        const ZT_CHAR* right;
-			    } speed;
-			    struct {
-			        const ZT_CHAR* title;
-			        const ZT_CHAR* left;
-			        const ZT_CHAR* right;
-			    } channel;
-			} label;
-		} device;
-		struct {
-			const ZT_CHAR* desc;
-		} help;
-		struct {
-			const ZT_CHAR* desc;
-		} credits;
-	} menu;
-	struct {
-		const ZT_CHAR* menu;
-		struct {
-            const ZT_CHAR* resume;
-            const ZT_CHAR* running;
-		} capture;
-		struct {
-			const ZT_CHAR* diagram;
-			const ZT_CHAR* trigger;
-			const ZT_CHAR* measure;
-			const ZT_CHAR* cursor;
-			const ZT_CHAR* setting;
-		} selector;
-		struct {
-		    struct {
-		        const ZT_CHAR* scan;
-		        const ZT_CHAR* fixed;
-		    } type;
-            const ZT_CHAR* reset;
-		} diagram;
-		struct {
-		    struct {
-		        const ZT_CHAR* none;
-		        const ZT_CHAR* cont;
-		        const ZT_CHAR* single;
-		    } mode;
-		    struct {
-		        const ZT_CHAR* rising;
-		        const ZT_CHAR* falling;
-		    } type;
-		    struct {
-		        const ZT_CHAR* ch1;
-		        const ZT_CHAR* ch2;
-		        const ZT_CHAR* ch3;
-		        const ZT_CHAR* ch4;
-		        const ZT_CHAR* ch5;
-		        const ZT_CHAR* ch6;
-		        const ZT_CHAR* ch7;
-		        const ZT_CHAR* ch8;
-		    } channel;
-		    struct {
-		        struct {
-		            const ZT_CHAR* title;
-		            const ZT_CHAR* right;
-		        } holdoff;
-		    } label;
-		} trigger;
-		struct {
-		    struct {
-		        const ZT_CHAR* raw;
-		        const ZT_CHAR* volt;
-		    } unit;
-		} measure;
-		struct {
-		    struct {
-		        const ZT_CHAR* none;
-		        const ZT_CHAR* time;
-		        const ZT_CHAR* volt;
-		    } type;
-		    struct {
-		        const ZT_CHAR* first;
-		        const ZT_CHAR* second;
-		    } target;
-		} cursor;
-	} hud;
-	struct {
-		const ZT_CHAR* title;
-	} window;
-} ZSCOPE_TEXT;
 
 typedef struct {
 	struct {
@@ -173,6 +85,7 @@ typedef struct {
 			ZUI_BUTTON* device;
 			ZUI_BUTTON* help;
 			ZUI_BUTTON* credits;
+			ZUI_BUTTON* settings;
 			ZUI_BUTTON* exit;
 		} head;
 		struct {
@@ -202,10 +115,15 @@ typedef struct {
 		struct {
 			ZUI_LABEL* desc;
 		} credits;
+		struct {
+			ZUI_CYCLE* renderer;
+			ZUI_CYCLE* language;
+		} settings;
 	} menu;
 	struct {
 		ZUI_BUTTON* menu;
         ZUI_SWITCH* capture;
+        ZUI_SWITCH* record;
         ZUI_CYCLE* selector;
 		struct {
 			ZUI_BOX* top;
@@ -214,6 +132,8 @@ typedef struct {
 		struct {
 			ZUI_CYCLE* type;
             ZUI_BUTTON* reset;
+            ZUI_BUTTON* exportBmp;
+            ZUI_BUTTON* exportPng;
 		} diagram;
 		struct {
 			ZUI_CYCLE* mode;
@@ -234,42 +154,22 @@ typedef struct {
 			ZUI_CYCLE* type;
 			ZUI_CYCLE* target;
 		} cursor;
-		struct {
-			ZUI_BUTTON* spawn;
-			ZUI_BUTTON* wipe;
-			ZUI_BUTTON* save;
-		} setting;
 	} hud;
 } ZSCOPE_GUI;
 
 typedef struct {
-    struct {
-        ZT_EVENT* window;
-        ZT_EVENT* gui;
-    } event;
-    ZT_PRINTER* printer;
     struct {
         ZT_FONT* window;
         ZT_FONT* title;
         ZT_FONT* desc;
     } font;
     struct {
-        ZT_INDEX fps;
-    } counter;
-    struct {
-        ZT_INDEX fps;
-    } stat;
-    struct {
-        ZT_TIME fps;
-        ZT_TIME draw;
-        ZT_TIME capture;
-    } timestamp;
-    struct {
-        ZT_TIME fps;
-        ZT_TIME draw;
-        ZT_TIME capture;
-    } timeout;
+        ZT_INDEX counter;
+        ZT_INDEX stat;
+        ZT_TIME timestamp;
+    } fps;
     ZT_FLAG flag;
+    ZT_FLAG menu;
     struct {
         struct {
             ZT_POINT hud;
@@ -281,7 +181,7 @@ typedef struct {
     struct {
         ZT_POINT fps;
         ZT_POINT daq;
-        ZT_POINT trigger;
+        //ZT_POINT trigger;
         ZT_POINT xfer;
         ZT_POINT measure[8];
     } pos;

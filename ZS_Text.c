@@ -1,69 +1,135 @@
-/*** Copyright (C) 2019-2020 ZaidaTek and Andreas Riebesehl
+/*** Copyright (C) 2019-2021 ZaidaTek and Andreas Riebesehl
 **** This work is licensed under: Creative Commons Attribution-NoDerivatives 4.0 International Public License
 **** For full license text, please visit: https://creativecommons.org/licenses/by-nd/4.0/legalcode
 ***/
 #ifndef ZS_TEXT_C_INCLUDED
 #define ZS_TEXT_C_INCLUDED
 
-#include "ZS_Text.h"
+#include "ZS.h"
 
-void ZSTXT_Load(ZSCOPE_TEXT* iHive, ZT_FLAG iLang) {
-	if (iHive != NULL) {
-		switch (iLang) {
-            case ZSCOPE_TEXT_LANG_EN:
-                iHive->window.title = (const ZT_CHAR*)(ZSCOPE_TEXT_EN_WINDOW_TITLE " - " ZSCOPE_VERSION);
-                iHive->menu.title = (const ZT_CHAR*)(ZSCOPE_TEXT_EN_MENU_TITLE);
-                iHive->menu.head.device = (const ZT_CHAR*)(ZSCOPE_TEXT_EN_MENU_HEAD_DEVICE);
-                iHive->menu.head.help = (const ZT_CHAR*)(ZSCOPE_TEXT_EN_MENU_HEAD_HELP);
-                iHive->menu.head.credits = (const ZT_CHAR*)(ZSCOPE_TEXT_EN_MENU_HEAD_CREDITS);
-                iHive->menu.head.exit = (const ZT_CHAR*)(ZSCOPE_TEXT_EN_MENU_HEAD_EXIT);
-                iHive->menu.device.connect = (const ZT_CHAR*)(ZSCOPE_TEXT_EN_MENU_DEVICE_CONNECT);
-                iHive->menu.device.disconnect = (const ZT_CHAR*)(ZSCOPE_TEXT_EN_MENU_DEVICE_DISCONNECT);
-                iHive->menu.device.label.address.title = (const ZT_CHAR*)"COM Port";
-                iHive->menu.device.label.speed.title = (const ZT_CHAR*)"Rate";
-                iHive->menu.device.label.speed.right = (const ZT_CHAR*)"Hz";
-                iHive->menu.device.label.channel.title = (const ZT_CHAR*)"Channels";
-                iHive->menu.device.label.channel.left = (const ZT_CHAR*)"A7";
-                iHive->menu.device.label.channel.right = (const ZT_CHAR*)"A0";
-                iHive->menu.help.desc = (const ZT_CHAR*)(ZSCOPE_TEXT_EN_MENU_HELP_DESC);
-                iHive->menu.credits.desc = (const ZT_CHAR*)(ZSCOPE_TEXT_EN_MENU_CREDITS_DESC);
-                iHive->hud.menu = (const ZT_CHAR*)(ZSCOPE_TEXT_EN_HUD_MENU);
-                iHive->hud.capture.resume = (const ZT_CHAR*)"Resume";
-                iHive->hud.capture.running = (const ZT_CHAR*)"Running";
-                iHive->hud.selector.diagram = (const ZT_CHAR*)"Diagram";
-                iHive->hud.selector.trigger = (const ZT_CHAR*)"Trigger";
-                iHive->hud.selector.measure = (const ZT_CHAR*)"Measure";
-                iHive->hud.selector.cursor = (const ZT_CHAR*)"Cursor";
-                iHive->hud.selector.setting = (const ZT_CHAR*)"Setting";
-                iHive->hud.diagram.type.scan = (const ZT_CHAR*)"Type: Scan";
-                iHive->hud.diagram.type.fixed = (const ZT_CHAR*)"Type: Fixed";
-                iHive->hud.diagram.reset = (const ZT_CHAR*)"Reset";
-                iHive->hud.trigger.mode.none = (const ZT_CHAR*)"Mode: None";
-                iHive->hud.trigger.mode.cont = (const ZT_CHAR*)"Mode: Continuous";
-                iHive->hud.trigger.mode.single = (const ZT_CHAR*)"Mode: Single";
-                iHive->hud.trigger.type.rising = (const ZT_CHAR*)"Flank: Rising";
-                iHive->hud.trigger.type.falling = (const ZT_CHAR*)"Flank: Falling";
-                iHive->hud.trigger.channel.ch1 = (const ZT_CHAR*)"Channel: 1";
-                iHive->hud.trigger.channel.ch2 = (const ZT_CHAR*)"Channel: 2";
-                iHive->hud.trigger.channel.ch3 = (const ZT_CHAR*)"Channel: 3";
-                iHive->hud.trigger.channel.ch4 = (const ZT_CHAR*)"Channel: 4";
-                iHive->hud.trigger.channel.ch5 = (const ZT_CHAR*)"Channel: 5";
-                iHive->hud.trigger.channel.ch6 = (const ZT_CHAR*)"Channel: 6";
-                iHive->hud.trigger.channel.ch7 = (const ZT_CHAR*)"Channel: 7";
-                iHive->hud.trigger.channel.ch8 = (const ZT_CHAR*)"Channel: 8";
-                iHive->hud.trigger.label.holdoff.title = (const ZT_CHAR*)"Holdoff";
-                iHive->hud.trigger.label.holdoff.right = (const ZT_CHAR*)"ms";
-                iHive->hud.measure.unit.raw = (const ZT_CHAR*)"Unit: Raw";
-                iHive->hud.measure.unit.volt = (const ZT_CHAR*)"Unit: Physical";
-                iHive->hud.cursor.type.none = (const ZT_CHAR*)"Type: Off";
-                iHive->hud.cursor.type.time = (const ZT_CHAR*)"Type: Time";
-                iHive->hud.cursor.type.volt = (const ZT_CHAR*)"Type: Voltage";
-                iHive->hud.cursor.target.first = (const ZT_CHAR*)"Target: 1";
-                iHive->hud.cursor.target.second = (const ZT_CHAR*)"Target: 2";
-                break;
-            default:
-                break;
-        }
+void ZS_TextLoad(ZT_FLAG iLang) {
+    switch (iLang) {
+        default:
+        case ZSCOPE_TEXT_LANG_EN:
+gText[ZSTX_VERSION] = (const ZT_CHAR*)"v210419";
+gText[ZSTX_TITLE] = (const ZT_CHAR*)"ZaidaScope";
+gText[ZSTX_WINDOW] = (const ZT_CHAR*)"ZaidaScope - v210419";
+gText[ZSTX_MN_DEVICE] = (const ZT_CHAR*)"Devices";
+gText[ZSTX_MN_HELP] = (const ZT_CHAR*)"Help";
+gText[ZSTX_MN_CREDITS] = (const ZT_CHAR*)"Credits";
+gText[ZSTX_MN_SETTINGS] = (const ZT_CHAR*)"Settings";
+gText[ZSTX_MN_EXIT] = (const ZT_CHAR*)"Exit";
+gText[ZSTX_MN_CONNECT] = (const ZT_CHAR*)"Connect";
+gText[ZSTX_MN_DISCONNECT] = (const ZT_CHAR*)"Disconnect";
+gText[ZSTX_MN_LBL_ADDRESS] = (const ZT_CHAR*)"COM Port";
+gText[ZSTX_MN_LBL_SPEED] = (const ZT_CHAR*)"Rate";
+gText[ZSTX_MN_LBL_SPEED_R] = (const ZT_CHAR*)"Hz";
+gText[ZSTX_MN_LBL_CHANNEL] = (const ZT_CHAR*)"Channels";
+gText[ZSTX_MN_LBL_CHANNEL_L] = (const ZT_CHAR*)"A7";
+gText[ZSTX_MN_LBL_CHANNEL_R] = (const ZT_CHAR*)"A0";
+gText[ZSTX_MN_HELP_DESC] = (const ZT_CHAR*)"Use MWHEEL or UP/DOWN\nwhile in trigger or cursor\nmenu to adjust levels.\nHold SHIFT for fine adustement.\n\nPress and hold LMOUSE\nto scroll capture while paused or\ntrigger position while in trigger menu.";
+gText[ZSTX_MN_CREDITS_DESC] = (const ZT_CHAR*)"ZaidaScope:\nZaidaTek\nAndreas Riebesehl\n\nlibZDK:\nZaidaTek\nAndreas Riebesehl\n\nLicense:\nCreative Commons BY-ND 4.0";
+gText[ZSTX_MN_SET_RENDER_SYS] = (const ZT_CHAR*)"Renderer: System";
+gText[ZSTX_MN_SET_RENDER_GL] = (const ZT_CHAR*)"Renderer: OpenGL";
+gText[ZSTX_MN_SET_LANG_EN] = (const ZT_CHAR*)"Language: English";
+gText[ZSTX_MN_SET_LANG_DE] = (const ZT_CHAR*)"Sprache: Deutsch";
+gText[ZSTX_HD_MENU] = (const ZT_CHAR*)"Menu";
+gText[ZSTX_HD_CAPTURE_OFF] = (const ZT_CHAR*)"Resume";
+gText[ZSTX_HD_CAPTURE_ON] = (const ZT_CHAR*)"Running";
+gText[ZSTX_HD_RECORD_OFF] = (const ZT_CHAR*)"Record";
+gText[ZSTX_HD_RECORD_ON] = (const ZT_CHAR*)"Recording";
+gText[ZSTX_HD_SELECT_DIA] = (const ZT_CHAR*)"Diagram";
+gText[ZSTX_HD_SELECT_TRI] = (const ZT_CHAR*)"Trigger";
+gText[ZSTX_HD_SELECT_MES] = (const ZT_CHAR*)"Measure";
+gText[ZSTX_HD_SELECT_CUR] = (const ZT_CHAR*)"Cursor";
+gText[ZSTX_HD_DIA_TYPE_SCAN] = (const ZT_CHAR*)"Type: Scan";
+gText[ZSTX_HD_DIA_TYPE_FIXED] = (const ZT_CHAR*)"Type: Fixed";
+gText[ZSTX_HD_DIA_RESET] = (const ZT_CHAR*)"Reset";
+gText[ZSTX_HD_DIA_BMP] = (const ZT_CHAR*)"Export BMP";
+gText[ZSTX_HD_DIA_PNG] = (const ZT_CHAR*)"Export PNG";
+gText[ZSTX_HD_TRI_MODE_NONE] = (const ZT_CHAR*)"Mode: None";
+gText[ZSTX_HD_TRI_MODE_CONT] = (const ZT_CHAR*)"Mode: Continuous";
+gText[ZSTX_HD_TRI_MODE_SINGLE] = (const ZT_CHAR*)"Mode: Single";
+gText[ZSTX_HD_TRI_TYPE_RISING] = (const ZT_CHAR*)"Flank: Rising";
+gText[ZSTX_HD_TRI_TYPE_FALLING] = (const ZT_CHAR*)"Flank: Falling";
+gText[ZSTX_HD_TRI_CH_1] = (const ZT_CHAR*)"Channel: 1";
+gText[ZSTX_HD_TRI_CH_2] = (const ZT_CHAR*)"Channel: 2";
+gText[ZSTX_HD_TRI_CH_3] = (const ZT_CHAR*)"Channel: 3";
+gText[ZSTX_HD_TRI_CH_4] = (const ZT_CHAR*)"Channel: 4";
+gText[ZSTX_HD_TRI_CH_5] = (const ZT_CHAR*)"Channel: 5";
+gText[ZSTX_HD_TRI_CH_6] = (const ZT_CHAR*)"Channel: 6";
+gText[ZSTX_HD_TRI_CH_7] = (const ZT_CHAR*)"Channel: 7";
+gText[ZSTX_HD_TRI_CH_8] = (const ZT_CHAR*)"Channel: 8";
+gText[ZSTX_HD_TRI_LBL_HOLDOFF] = (const ZT_CHAR*)"Holdoff";
+gText[ZSTX_HD_TRI_LBL_HOLDOFF_R] = (const ZT_CHAR*)"ms";
+gText[ZSTX_HD_MES_UNIT_RAW] = (const ZT_CHAR*)"Unit: Raw";
+gText[ZSTX_HD_MES_UNIT_PHY] = (const ZT_CHAR*)"Unit: Physical";
+gText[ZSTX_HD_CUR_TYPE_NONE] = (const ZT_CHAR*)"Type: Off";
+gText[ZSTX_HD_CUR_TYPE_TIME] = (const ZT_CHAR*)"Type: Time";
+gText[ZSTX_HD_CUR_TYPE_VOLT] = (const ZT_CHAR*)"Type: Voltage";
+gText[ZSTX_HD_CUR_TARGET_1] = (const ZT_CHAR*)"Target: 1";
+gText[ZSTX_HD_CUR_TARGET_2] = (const ZT_CHAR*)"Target: 2";
+return;
+        case ZSCOPE_TEXT_LANG_DE:
+gText[ZSTX_VERSION] = (const ZT_CHAR*)"v210419";
+gText[ZSTX_TITLE] = (const ZT_CHAR*)"ZaidaScope";
+gText[ZSTX_WINDOW] = (const ZT_CHAR*)"ZaidaScope - v210419";
+gText[ZSTX_MN_DEVICE] = (const ZT_CHAR*)"Geräte";
+gText[ZSTX_MN_HELP] = (const ZT_CHAR*)"Hilfe";
+gText[ZSTX_MN_CREDITS] = (const ZT_CHAR*)"Autor";
+gText[ZSTX_MN_SETTINGS] = (const ZT_CHAR*)"Einstellungen";
+gText[ZSTX_MN_EXIT] = (const ZT_CHAR*)"Beenden";
+gText[ZSTX_MN_CONNECT] = (const ZT_CHAR*)"Verbinden";
+gText[ZSTX_MN_DISCONNECT] = (const ZT_CHAR*)"Trennen";
+gText[ZSTX_MN_LBL_ADDRESS] = (const ZT_CHAR*)"COM Port";
+gText[ZSTX_MN_LBL_SPEED] = (const ZT_CHAR*)"Rate";
+gText[ZSTX_MN_LBL_SPEED_R] = (const ZT_CHAR*)"Hz";
+gText[ZSTX_MN_LBL_CHANNEL] = (const ZT_CHAR*)"Kanäle";
+gText[ZSTX_MN_LBL_CHANNEL_L] = (const ZT_CHAR*)"A7";
+gText[ZSTX_MN_LBL_CHANNEL_R] = (const ZT_CHAR*)"A0";
+gText[ZSTX_MN_HELP_DESC] = (const ZT_CHAR*)"HILFETEXT";
+gText[ZSTX_MN_CREDITS_DESC] = (const ZT_CHAR*)"ZaidaScope:\nZaidaTek\nAndreas Riebesehl\n\nlibZDK:\nZaidaTek\nAndreas Riebesehl\n\nLizenz:\nCreative Commons BY-ND 4.0";
+gText[ZSTX_MN_SET_RENDER_SYS] = (const ZT_CHAR*)"Grafik: System";
+gText[ZSTX_MN_SET_RENDER_GL] = (const ZT_CHAR*)"Grafik: OpenGL";
+gText[ZSTX_MN_SET_LANG_EN] = (const ZT_CHAR*)"Language: English";
+gText[ZSTX_MN_SET_LANG_DE] = (const ZT_CHAR*)"Sprache: Deutsch";
+gText[ZSTX_HD_MENU] = (const ZT_CHAR*)"Menü";
+gText[ZSTX_HD_CAPTURE_OFF] = (const ZT_CHAR*)"Fortsetzen";
+gText[ZSTX_HD_CAPTURE_ON] = (const ZT_CHAR*)"Aufnahme";
+gText[ZSTX_HD_RECORD_OFF] = (const ZT_CHAR*)"Aufzeichnen";
+gText[ZSTX_HD_RECORD_ON] = (const ZT_CHAR*)"Aufzeichnung";
+gText[ZSTX_HD_SELECT_DIA] = (const ZT_CHAR*)"Diagramm";
+gText[ZSTX_HD_SELECT_TRI] = (const ZT_CHAR*)"Trigger";
+gText[ZSTX_HD_SELECT_MES] = (const ZT_CHAR*)"Messen";
+gText[ZSTX_HD_SELECT_CUR] = (const ZT_CHAR*)"Cursor";
+gText[ZSTX_HD_DIA_TYPE_SCAN] = (const ZT_CHAR*)"Typ: Scan";
+gText[ZSTX_HD_DIA_TYPE_FIXED] = (const ZT_CHAR*)"Typ: Fixiert";
+gText[ZSTX_HD_DIA_RESET] = (const ZT_CHAR*)"Wiederherstellen";
+gText[ZSTX_HD_DIA_BMP] = (const ZT_CHAR*)"BMP exportieren";
+gText[ZSTX_HD_DIA_PNG] = (const ZT_CHAR*)"PNG exportieren";
+gText[ZSTX_HD_TRI_MODE_NONE] = (const ZT_CHAR*)"Modus: Aus";
+gText[ZSTX_HD_TRI_MODE_CONT] = (const ZT_CHAR*)"Modus: Kontinuierlich";
+gText[ZSTX_HD_TRI_MODE_SINGLE] = (const ZT_CHAR*)"Modus: Einzeln";
+gText[ZSTX_HD_TRI_TYPE_RISING] = (const ZT_CHAR*)"Flanke: Steigend";
+gText[ZSTX_HD_TRI_TYPE_FALLING] = (const ZT_CHAR*)"Flanke: Fallend";
+gText[ZSTX_HD_TRI_CH_1] = (const ZT_CHAR*)"Kanal: 1";
+gText[ZSTX_HD_TRI_CH_2] = (const ZT_CHAR*)"Kanal: 2";
+gText[ZSTX_HD_TRI_CH_3] = (const ZT_CHAR*)"Kanal: 3";
+gText[ZSTX_HD_TRI_CH_4] = (const ZT_CHAR*)"Kanal: 4";
+gText[ZSTX_HD_TRI_CH_5] = (const ZT_CHAR*)"Kanal: 5";
+gText[ZSTX_HD_TRI_CH_6] = (const ZT_CHAR*)"Kanal: 6";
+gText[ZSTX_HD_TRI_CH_7] = (const ZT_CHAR*)"Kanal: 7";
+gText[ZSTX_HD_TRI_CH_8] = (const ZT_CHAR*)"Kanal: 8";
+gText[ZSTX_HD_TRI_LBL_HOLDOFF] = (const ZT_CHAR*)"Holdoff";
+gText[ZSTX_HD_TRI_LBL_HOLDOFF_R] = (const ZT_CHAR*)"ms";
+gText[ZSTX_HD_MES_UNIT_RAW] = (const ZT_CHAR*)"Einheit: Roh";
+gText[ZSTX_HD_MES_UNIT_PHY] = (const ZT_CHAR*)"Einheit: Physisch";
+gText[ZSTX_HD_CUR_TYPE_NONE] = (const ZT_CHAR*)"Typ: Aus";
+gText[ZSTX_HD_CUR_TYPE_TIME] = (const ZT_CHAR*)"Typ: Zeitlich";
+gText[ZSTX_HD_CUR_TYPE_VOLT] = (const ZT_CHAR*)"Typ: Spannung";
+gText[ZSTX_HD_CUR_TARGET_1] = (const ZT_CHAR*)"Cursor: 1";
+gText[ZSTX_HD_CUR_TARGET_2] = (const ZT_CHAR*)"Cursor: 2";
+return;
     }
 }
 

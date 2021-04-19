@@ -1,4 +1,4 @@
-/*** Copyright (C) 2019-2020 ZaidaTek and Andreas Riebesehl
+/*** Copyright (C) 2019-2021 ZaidaTek and Andreas Riebesehl
 **** This work is licensed under: Creative Commons Attribution-NoDerivatives 4.0 International Public License
 **** For full license text, please visit: https://creativecommons.org/licenses/by-nd/4.0/legalcode
 ***/
@@ -15,6 +15,8 @@ void ZSDIA_Exit(void);
 void ZSDIA_Reset(void);
 void ZSDIA_Grid(void);
 void ZSDIA_Move(ZT_I iIncrement);
+void ZSDIA_FlipV(ZT_BOOL iEnabled);
+void ZSDIA_Colors(void);
 #ifdef __cplusplus
 }
 #endif // __cplusplus

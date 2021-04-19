@@ -1,4 +1,4 @@
-/*** Copyright (C) 2019-2020 ZaidaTek and Andreas Riebesehl
+/*** Copyright (C) 2019-2021 ZaidaTek and Andreas Riebesehl
 **** This work is licensed under: Creative Commons Attribution-NoDerivatives 4.0 International Public License
 **** For full license text, please visit: https://creativecommons.org/licenses/by-nd/4.0/legalcode
 ***/
@@ -10,7 +10,8 @@
 #ifdef __cplusplus
 extern "C" {
 #endif // __cplusplus
-void ZSDEV_Capture(ZT_INDEX iState);
+void ZSDEV_Capture(ZT_FLAG iState);
+void ZSDEV_Record(ZT_FLAG iState);
 void ZSDEV_Read(void);
 void ZSDEV_LoadGUI(void);
 void ZSDEV_FreeHardware(void);

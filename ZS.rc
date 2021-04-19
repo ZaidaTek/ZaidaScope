@@ -1,0 +1,4 @@
+
+#include <ZTK__Res.h>
+
+ZTK_ICON_INTEGRATED ICON "ZS.ico"
