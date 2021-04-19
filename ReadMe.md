@@ -50,6 +50,12 @@ Use your PC and Arduino as an Oscilloscope!
 
 3) Since v210419, the included configuration file instructs the program to use the OpenGL renderer. Should it not start because of this, simply delete `ZS.cfg`, as the program will then create a new one with the default settings, which uses Windows' built-in GDI system renderer instead.
 
+4) Using the *Export to PNG* function requires `zlib.dll` and `libpng.dll` to be in the program's execution directory.
+
+5) Recorded data/Exported diagrams are saved in program's execution directory.
+
+6) Diagram colors may be altered by editing `ZS.cfg`. Color values are saved in hex using RGBA format, e.g. red is `ff0000ff`, blue is `ffff` and yellow is `ffff00ff`. Deleting `ZS.cfg` will force the program to load default values, and write a new `ZS.cfg` upon program exit.
+
 
 
 ## Version History
