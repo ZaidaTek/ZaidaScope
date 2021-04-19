@@ -56,6 +56,8 @@ Use your PC and Arduino as an Oscilloscope!
 
 6) Diagram colors may be altered by editing `ZS.cfg`. Color values are saved in hex using RGBA format, e.g. red is `ff0000ff`, blue is `ffff` and yellow is `ffff00ff`. Deleting `ZS.cfg` will force the program to load default values, and write a new `ZS.cfg` upon program exit.
 
+7) `ZS.cfg` uses a single `LF`, **not** Windows' `CRLF` line-feeding, so use a proper editor that respects this convention, such as *Notepad++*, for editing this file. An editor that uses `CRLF` for a new line will cause undefined behaviour.
+
 
 
 ## Version History
