@@ -30,7 +30,7 @@ Use your PC and Arduino as an Oscilloscope!
 
 3) Upload included `at328p.ino` file to your Arduino Uno/Nano or similar AT328P
 
-4) Execute `ZS.exe`, choose your COM-Port, channel config and sampling rate, and click Connect
+4) Execute `ZS.exe`, choose your COM-Port, channel config and sampling rate, and click *Connect*
 
 
 
@@ -48,15 +48,15 @@ Use your PC and Arduino as an Oscilloscope!
 
 2) For higher sampling rates you may need to **add a voltage follower to your signal**, especially if your signal is high impedance, because the internal impedance of the Arduino will be very low at higher sampling rates. Otherwise, your signal can drop to zero volts. See Electrical Setup below for details on this.
 
-3) Since v210419, the included configuration file instructs the program to use the OpenGL renderer. Should it not start because of this, simply delete `ZS.cfg`, as the program will then create a new one with the default settings, which uses Windows' built-in GDI system renderer instead.
+3) Since v210419, the included configuration file instructs the program to use the **OpenGL renderer**. Should it not start because of this, simply delete `ZS.cfg`, as the program will then create a new one with the default settings, which uses Windows' built-in GDI system renderer instead.
 
 4) Using the *Export to PNG* function requires `zlib.dll` and `libpng.dll` to be in the program's execution directory.
 
 5) Recorded data/Exported diagrams are saved in program's execution directory.
 
-6) Diagram colors may be altered by editing `ZS.cfg`. Color values are saved in hex using RGBA format, e.g. red is `ff0000ff`, blue is `ffff` and yellow is `ffff00ff`. Deleting `ZS.cfg` will force the program to load default values, and write a new `ZS.cfg` upon program exit.
+6) Diagram colors may be altered by editing `ZS.cfg`, color values are saved in hex using RGBA format, e.g. red is `ff0000ff`, blue is `ffff` and yellow is `ffff00ff`. Deleting `ZS.cfg` will force the program to load default values, and write a new `ZS.cfg` upon program exit.
 
-7) `ZS.cfg` uses a single `LF`, **not** Windows' `CRLF` line-feeding, so use a proper editor that respects this convention, such as *Notepad++*, for editing this file. An editor that uses `CRLF` for a new line will cause undefined behaviour.
+7) `ZS.cfg` uses a single `LF`, **not** Windows' `CRLF` line-feeding, so use an editor that respects this convention (such as e.g. *Notepad++*) for editing this file. An editor that uses `CRLF` for a new line will cause undefined behaviour.
 
 
 
@@ -102,7 +102,7 @@ ZaidaScope is an open-source software that was born out of the libraries created
 
 The AT328P was chosen, as its low cost, abundance, bit-depth and sampling rate were all deemed to be sufficient for the task.
 
-Visit our website https://zaidatek.net/ for contact details if you require a similar custom solution.
+Visit our [website](https://zaidatek.net/) for contact details if you require a similar custom solution.
 
 
 
