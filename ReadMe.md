@@ -18,17 +18,19 @@ Use your PC and Arduino as an Oscilloscope!
 
 3) Basic trigger and cursor functions
 
+4) Basic recording to .csv functions
+
 
 
 ## Installation
 
-1) Download https://github.com/ZaidaTek/ZaidaScope/raw/master/__latest.zip
+1) Download the [latest version](https://github.com/ZaidaTek/ZaidaScope/raw/master/__latest.zip)
 
 2) Extract to folder of your choice
 
-3) Upload included at328p.ino file to your Arduino Uno/Nano or similar AT328P
+3) Upload included `at328p.ino` file to your Arduino Uno/Nano or similar AT328P
 
-4) Execute ZS.exe, choose your COM-Port, channel config and sampling rate, and click Connect
+4) Execute `ZS.exe`, choose your COM-Port, channel config and sampling rate, and click Connect
 
 
 
@@ -44,11 +46,23 @@ Use your PC and Arduino as an Oscilloscope!
 
 1) If your Arduino uses an FTDI USB/Serial Chip, you need to **adjust latency from the default 16 ms to 1 ms for best performance**. To do this, go to Device Manager, open COM port, go to Port Settings, click Advanced and adjust latency to 1 ms. USB/Serial chip CH340 does not have this issue, but has many COM communication errors at higher sampling rates.
 
-2) For higher sampling rates you may need to **add a voltage follower to your signal**, especially if your signal is high impedance, because the internal impedance of the Arduino will be very low at higher sampling rates. Otherwise, your signal can drop to zero volts. See below for details on this.
+2) For higher sampling rates you may need to **add a voltage follower to your signal**, especially if your signal is high impedance, because the internal impedance of the Arduino will be very low at higher sampling rates. Otherwise, your signal can drop to zero volts. See Electrical Setup below for details on this.
+
+3) Since v210419, the included configuration file instructs the program to use the OpenGL renderer. Should it not start because of this, simply delete `ZS.cfg`, asthe program will then create a new one with the default settings, which uses Windows' built-in GDI system renderer instead.
 
 
 
-## Setup (Optional)
+## Version History
+
+**v210419:** Added configuration file, German language support, OpenGL rendering, CSV recording
+
+**v200706:** Renamed to ZaidaScope
+
+**v200704:** Initial release
+
+
+
+## Electrical Setup (Optional)
 
 When using higher sampling rates, it may be necessary to add a voltage follower to the input signal, so as to not compromise the original measurement signal.
 
@@ -86,7 +100,7 @@ Visit our website https://zaidatek.net/ for contact details if you require a sim
 
 ## License
 
-Copyright (C) 2019-2020 ZaidaTek and Andreas Riebesehl
+Copyright (C) 2019-2021 ZaidaTek and Andreas Riebesehl
 
 This work is licensed under: Creative Commons Attribution-NoDerivatives 4.0 International Public License
 
