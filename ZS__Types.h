@@ -66,6 +66,7 @@ typedef struct {
     ZT_FLAG lang;
     ZT_FLAG hud;
     ZT_FLAG renderer;
+    ZT_TIME framerate;
     struct {
         ZT_U address;
         ZT_U speed;
@@ -118,6 +119,7 @@ typedef struct {
 		struct {
 			ZUI_CYCLE* renderer;
 			ZUI_CYCLE* language;
+			ZUI_CYCLE* framerate;
 		} settings;
 	} menu;
 	struct {
@@ -170,6 +172,10 @@ typedef struct {
     } fps;
     ZT_FLAG flag;
     ZT_FLAG menu;
+    struct {
+        ZT_TIME timestamp;
+        ZT_TIME delay;
+    } draw;
     struct {
         struct {
             ZT_POINT hud;

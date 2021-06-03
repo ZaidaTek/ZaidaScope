@@ -29,9 +29,11 @@ void ZSGUI_InitMenu(void) {
     gGUI.menu.help.desc = ZUI_LabelNewFromFont(0, NULL, gText[ZSTX_MN_HELP_DESC], gApp.font.desc);
     gGUI.menu.credits.desc = ZUI_LabelNewFromFont(0, NULL, gText[ZSTX_MN_CREDITS_DESC], gApp.font.desc);
     gGUI.menu.settings.renderer = ZUI_CycleNew(ZSCOPE_ID_MENU_SETTINGS_RENDERER, NULL, &gText[ZSTX_MN_SET_RENDER_SYS], 2);
-    ZUI_DataValue(gGUI.menu.settings.renderer, ZTM_BitIndex(gUsr.renderer));
     gGUI.menu.settings.language = ZUI_CycleNew(ZSCOPE_ID_MENU_SETTINGS_LANGUAGE, NULL, &gText[ZSTX_MN_SET_LANG_EN], 2);
+    gGUI.menu.settings.framerate = ZUI_CycleNew(ZSCOPE_ID_MENU_SETTINGS_FRAMERATE, NULL, &gText[ZSTX_MN_SET_FPS_MAX], 10);
+    ZUI_DataValue(gGUI.menu.settings.renderer, ZTM_BitIndex(gUsr.renderer)); //shouldn't these be moved to ZSGUI_MenuValues?
     ZUI_DataValue(gGUI.menu.settings.language, gUsr.lang);
+    ZUI_DataValue(gGUI.menu.settings.framerate, gUsr.framerate);
 }
 void ZSGUI_InitHUD(void) {
     gGUI.hud.box.top = ZUI_BoxNew(ZSCOPE_ID_HUD_BOX_TOP, NULL, 0x101010bf, 0xffffffff);
@@ -99,6 +101,7 @@ void ZSGUI_SizeMenu(void) {
 	ZUI_Size(gGUI.menu.credits.desc, NULL);
 	ZUI_Size(gGUI.menu.settings.renderer, &gApp.dim.button.hud);
 	ZUI_Size(gGUI.menu.settings.language, &gApp.dim.button.hud);
+	ZUI_Size(gGUI.menu.settings.framerate, &gApp.dim.button.hud);
 	// MENU POS
 	ZUI_PosCenterRelative(gGUI.menu.title, 0.5, (1.0 - ZSCOPE_HEIGHT_MENU) / 4);
 	ZUI_PosFromInteger(gGUI.menu.head.device, lBox.x + lBoxBorder, lBox.y + lBox.h - lButtonSize.y - lBoxBorder);
@@ -121,6 +124,7 @@ void ZSGUI_SizeMenu(void) {
 	ZUI_PosCenterFromInteger(gGUI.menu.credits.desc, lBox.x + lBox.w / 2, lBox.y + (lBox.h - lButtonSize.y) / 2);
 	ZUI_PosCenterFromInteger(gGUI.menu.settings.renderer, lBox.x + lBox.w / 2, lBox.y + 2 * lBox.h / 5);
 	ZUI_PosCenterFromInteger(gGUI.menu.settings.language, lBox.x + lBox.w / 2, lBox.y + 1 * lBox.h / 5);
+	ZUI_PosCenterFromInteger(gGUI.menu.settings.framerate, lBox.x + lBox.w / 2, lBox.y + 3 * lBox.h / 5);
 }
 void ZSGUI_SizeHUD(void) {
     ZT_I lWidth = gApp.rect.window.w;

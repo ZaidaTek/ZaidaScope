@@ -12,7 +12,7 @@ Use your PC and Arduino as an Oscilloscope!
 
 ## Features
 
-1) 1-100 kHz sampling rate (up to 75-80 kHz for 2+ channels)
+1) 1-100 kHz sampling rate ~~(up to 75-80 kHz for 2+ channels)~~ since v210603 full 100kS/s across all channels!
 
 2) Up to eight channels simultaneously
 
@@ -24,11 +24,11 @@ Use your PC and Arduino as an Oscilloscope!
 
 ## Installation
 
-1) Download the [latest version](https://github.com/ZaidaTek/ZaidaScope/raw/master/__latest.zip)
+1) Download the [latest version (v210603)](https://github.com/ZaidaTek/ZaidaScope/raw/master/__latest.zip)
 
 2) Extract to folder of your choice
 
-3) Upload included `at328p.ino` file to your Arduino Uno/Nano or similar AT328P
+3) Upload included `at328p.ino` file to your Arduino Uno/Nano or similar AT328P (**Note:** Please don't forget to reupload this if you're upgrading!)
 
 4) Execute `ZS.exe`, choose your COM-Port, channel config and sampling rate, and click *Connect*
 
@@ -58,9 +58,13 @@ Use your PC and Arduino as an Oscilloscope!
 
 7) `ZS.cfg` uses a single `LF`, **not** Windows' `CRLF` line-feeding, so use an editor that respects this convention (such as e.g. *Notepad++*) for editing this file. An editor that uses `CRLF` for a new line will cause undefined behaviour.
 
+8) Since v210603 the combined sampling rate of 100kHz can be guaranteed across all channel configurations (i.e. 100kHz for 1x, 12.5kHz for 8x channels) as long as your hardware supports it (FTDI vs. CH340 USB/RS232 chip issue)
+
 
 
 ## Version History
+
+**v210603:** Fixed and optimized AT328P's code, full 100kS/s rate across all channels and no "rate hole" at 30kHz, added FPS-cap in settings to reduce CPU-load
 
 **v210419:** Added configuration file, German language support, OpenGL rendering, CSV recording
 

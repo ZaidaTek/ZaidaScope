@@ -11,9 +11,9 @@ void ZS_TextLoad(ZT_FLAG iLang) {
     switch (iLang) {
         default:
         case ZSCOPE_TEXT_LANG_EN:
-gText[ZSTX_VERSION] = (const ZT_CHAR*)"v210419";
+gText[ZSTX_VERSION] = (const ZT_CHAR*)"v210603";
 gText[ZSTX_TITLE] = (const ZT_CHAR*)"ZaidaScope";
-gText[ZSTX_WINDOW] = (const ZT_CHAR*)"ZaidaScope - v210419";
+gText[ZSTX_WINDOW] = (const ZT_CHAR*)"ZaidaScope - v210603";
 gText[ZSTX_MN_DEVICE] = (const ZT_CHAR*)"Devices";
 gText[ZSTX_MN_HELP] = (const ZT_CHAR*)"Help";
 gText[ZSTX_MN_CREDITS] = (const ZT_CHAR*)"Credits";
@@ -33,6 +33,16 @@ gText[ZSTX_MN_SET_RENDER_SYS] = (const ZT_CHAR*)"Renderer: System";
 gText[ZSTX_MN_SET_RENDER_GL] = (const ZT_CHAR*)"Renderer: OpenGL";
 gText[ZSTX_MN_SET_LANG_EN] = (const ZT_CHAR*)"Language: English";
 gText[ZSTX_MN_SET_LANG_DE] = (const ZT_CHAR*)"Sprache: Deutsch";
+gText[ZSTX_MN_SET_FPS_MAX] = (const ZT_CHAR*)"FPS-Limit: Uncapped";
+gText[ZSTX_MN_SET_FPS_1000] = (const ZT_CHAR*)"FPS-Limit: 1000";
+gText[ZSTX_MN_SET_FPS_500] = (const ZT_CHAR*)"FPS-Limit: 500";
+gText[ZSTX_MN_SET_FPS_250] = (const ZT_CHAR*)"FPS-Limit: 250";
+gText[ZSTX_MN_SET_FPS_200] = (const ZT_CHAR*)"FPS-Limit: 200";
+gText[ZSTX_MN_SET_FPS_125] = (const ZT_CHAR*)"FPS-Limit: 125";
+gText[ZSTX_MN_SET_FPS_100] = (const ZT_CHAR*)"FPS-Limit: 100";
+gText[ZSTX_MN_SET_FPS_50] = (const ZT_CHAR*)"FPS-Limit: 50";
+gText[ZSTX_MN_SET_FPS_40] = (const ZT_CHAR*)"FPS-Limit: 40";
+gText[ZSTX_MN_SET_FPS_25] = (const ZT_CHAR*)"FPS-Limit: 25";
 gText[ZSTX_HD_MENU] = (const ZT_CHAR*)"Menu";
 gText[ZSTX_HD_CAPTURE_OFF] = (const ZT_CHAR*)"Resume";
 gText[ZSTX_HD_CAPTURE_ON] = (const ZT_CHAR*)"Running";
@@ -71,9 +81,9 @@ gText[ZSTX_HD_CUR_TARGET_1] = (const ZT_CHAR*)"Target: 1";
 gText[ZSTX_HD_CUR_TARGET_2] = (const ZT_CHAR*)"Target: 2";
 return;
         case ZSCOPE_TEXT_LANG_DE:
-gText[ZSTX_VERSION] = (const ZT_CHAR*)"v210419";
+gText[ZSTX_VERSION] = (const ZT_CHAR*)"v210603";
 gText[ZSTX_TITLE] = (const ZT_CHAR*)"ZaidaScope";
-gText[ZSTX_WINDOW] = (const ZT_CHAR*)"ZaidaScope - v210419";
+gText[ZSTX_WINDOW] = (const ZT_CHAR*)"ZaidaScope - v210603";
 gText[ZSTX_MN_DEVICE] = (const ZT_CHAR*)"Geräte";
 gText[ZSTX_MN_HELP] = (const ZT_CHAR*)"Hilfe";
 gText[ZSTX_MN_CREDITS] = (const ZT_CHAR*)"Autor";
@@ -93,6 +103,16 @@ gText[ZSTX_MN_SET_RENDER_SYS] = (const ZT_CHAR*)"Grafik: System";
 gText[ZSTX_MN_SET_RENDER_GL] = (const ZT_CHAR*)"Grafik: OpenGL";
 gText[ZSTX_MN_SET_LANG_EN] = (const ZT_CHAR*)"Language: English";
 gText[ZSTX_MN_SET_LANG_DE] = (const ZT_CHAR*)"Sprache: Deutsch";
+gText[ZSTX_MN_SET_FPS_MAX] = (const ZT_CHAR*)"FPS-Limit: Unbegrenzt";
+gText[ZSTX_MN_SET_FPS_1000] = (const ZT_CHAR*)"FPS-Limit: 1000";
+gText[ZSTX_MN_SET_FPS_500] = (const ZT_CHAR*)"FPS-Limit: 500";
+gText[ZSTX_MN_SET_FPS_250] = (const ZT_CHAR*)"FPS-Limit: 250";
+gText[ZSTX_MN_SET_FPS_200] = (const ZT_CHAR*)"FPS-Limit: 200";
+gText[ZSTX_MN_SET_FPS_125] = (const ZT_CHAR*)"FPS-Limit: 125";
+gText[ZSTX_MN_SET_FPS_100] = (const ZT_CHAR*)"FPS-Limit: 100";
+gText[ZSTX_MN_SET_FPS_50] = (const ZT_CHAR*)"FPS-Limit: 50";
+gText[ZSTX_MN_SET_FPS_40] = (const ZT_CHAR*)"FPS-Limit: 40";
+gText[ZSTX_MN_SET_FPS_25] = (const ZT_CHAR*)"FPS-Limit: 25";
 gText[ZSTX_HD_MENU] = (const ZT_CHAR*)"Menü";
 gText[ZSTX_HD_CAPTURE_OFF] = (const ZT_CHAR*)"Fortsetzen";
 gText[ZSTX_HD_CAPTURE_ON] = (const ZT_CHAR*)"Aufnahme";

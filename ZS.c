@@ -22,7 +22,11 @@ void ZS_Main(void) {
     }
     ZSDEV_Read();
     ZS_Event();
-    ZS_Draw();
+    if (ZTK_TimeoutReset(&(gApp.draw.timestamp), gApp.draw.delay)) {
+        ZS_Draw();
+    } else {
+        ZTL_Sleep(1);
+    }
 }
 void ZS_Printer(void) {
     ZT_RECT lRect;
@@ -154,6 +158,7 @@ void ZSUSR_DiskLoad(void) {
     if (ZKY_FileRead(lConfig, ZSCOPE_CFG_DELIMIT, ZSCOPE_CFG_ASSIGN, ZSCOPE_CFG_PATH)) {
         ZKY_ReadHex(lConfig, ZSCOPE_CFG_SET_RENDER, &gUsr.renderer);
         ZKY_ReadHex(lConfig, ZSCOPE_CFG_SET_LANG, &gUsr.lang);
+        ZKY_ReadHex(lConfig, ZSCOPE_CFG_SET_FPS, &gUsr.framerate);
         ZKY_ReadHex(lConfig, ZSCOPE_CFG_DEV_PORT, &gUsr.device.address);
         ZKY_ReadHex(lConfig, ZSCOPE_CFG_DEV_RATE, &gUsr.device.speed);
         ZKY_ReadHex(lConfig, ZSCOPE_CFG_DEV_CHANNEL, &gUsr.device.channel);
@@ -179,6 +184,7 @@ void ZSUSR_DiskLoad(void) {
 void ZSUSR_Save(void) {
     gUsr.renderer = 0x1 << ZUI_GetDataValue(gGUI.menu.settings.renderer);
     gUsr.lang = ZUI_GetDataValue(gGUI.menu.settings.language);
+    gUsr.framerate = ZUI_GetDataValue(gGUI.menu.settings.framerate);
     gUsr.device.address = ZUI_GetDataValue(gGUI.menu.device.address);
     gUsr.device.speed = ZUI_GetDataValue(gGUI.menu.device.speed);
     gUsr.device.channel = ZUI_GetDataValue(gGUI.menu.device.channel);
@@ -205,6 +211,7 @@ void ZSUSR_DiskSave(void) {
     ZKY* lConfig = ZKY_New();
     ZKY_SetHex(lConfig, ZSCOPE_CFG_SET_RENDER, gUsr.renderer);
     ZKY_SetHex(lConfig, ZSCOPE_CFG_SET_LANG, gUsr.lang);
+    ZKY_SetHex(lConfig, ZSCOPE_CFG_SET_FPS, gUsr.framerate);
     ZKY_SetHex(lConfig, ZSCOPE_CFG_DEV_PORT, gUsr.device.address);
     ZKY_SetHex(lConfig, ZSCOPE_CFG_DEV_RATE, gUsr.device.speed);
     ZKY_SetHex(lConfig, ZSCOPE_CFG_DEV_CHANNEL, gUsr.device.channel);
@@ -232,6 +239,7 @@ void ZSUSR_Init(void) {
     gUsr.hud = ZSCOPE_HUD_DIAGRAM;
     gUsr.lang = ZSCOPE_DEFAULT_TEXT_LANG;
     gUsr.renderer = ZSCOPE_DEFAULT_RENDERER;
+    gUsr.framerate = ZSCOPE_DEFAULT_FRAMERATE;
     gUsr.device.address = ZSCOPE_DEFAULT_ADDRESS;
     gUsr.device.speed = ZSCOPE_DEFAULT_SPEED;
     gUsr.device.channel = ZSCOPE_DEFAULT_CONFIG;
@@ -251,6 +259,20 @@ void ZSUSR_Init(void) {
     gUsr.color.plot[6] = ZDX_DIAGRAM_COLOR_PLOT_7;
     gUsr.color.plot[7] = ZDX_DIAGRAM_COLOR_PLOT_8;
     ZSUSR_DiskLoad();
+}
+void ZS_FramerateLoad(void) {
+    switch (gUsr.framerate) {
+        default: case 0: gApp.draw.delay = 0; break;
+        case 1: gApp.draw.delay = 1; break;
+        case 2: gApp.draw.delay = 2; break;
+        case 3: gApp.draw.delay = 4; break;
+        case 4: gApp.draw.delay = 5; break;
+        case 5: gApp.draw.delay = 8; break;
+        case 6: gApp.draw.delay = 10; break;
+        case 7: gApp.draw.delay = 20; break;
+        case 8: gApp.draw.delay = 25; break;
+        case 9: gApp.draw.delay = 40; break;
+    }
 }
 void ZS_Init(void) {
     ZTX_Init(ZTX_PNG);
@@ -276,6 +298,7 @@ void ZS_Init(void) {
     ZS_Size();
     ZSGUI_Menu();
     ZTK_Open();
+    ZS_FramerateLoad();
 }
 void ZS_Renderer(void) {
     ZSUSR_Save();
@@ -287,6 +310,10 @@ void ZS_Renderer(void) {
     ZSGUI_Init();
     ZSGUI_Size();
     ZSGUI_Menu();
+}
+void ZS_FramerateToggle(void) {
+    ZSUSR_Save();
+    ZS_FramerateLoad();
 }
 void ZS_Exit(void) {
     ZSUSR_DiskSave();
@@ -397,17 +424,11 @@ void ZSUSR_Level(ZT_BOOL iReverse) {
     }
 }
 void ZSUSR_Channels(void) {
-    ZT_FLAG lConfig = ZTM_BitCount(ZUI_GetDataValue(gGUI.menu.device.channel));
+    ZT_FLAG lChannels = ZTM_BitCount(ZUI_GetDataValue(gGUI.menu.device.channel));
     ZT_INDEX lMax;
-    switch (lConfig) {
-        default: lMax = 9999999; break;
-        case 2: lMax = 4000000; break;
-        case 3: lMax = 2500000; break;
-        case 4: lMax = 2000000; break;
-        case 5: lMax = 1500000; break;
-        case 6: lMax = 1250000; break;
-        case 7: lMax = 1000000; break;
-        case 8: lMax = 750000; break;
+    switch (lChannels) {
+        case 0: case 1: lMax = 9999999; break;
+        default: lMax = 10000000 / lChannels; break;
     }
     ZUI_DataMaximum(gGUI.menu.device.speed, lMax);
 }
@@ -462,6 +483,7 @@ void ZS_Event(void) {
                     case ZSCOPE_ID_MENU_DEVICE_DISCONNECT: ZS_Disconnect(); break;
                     case ZSCOPE_ID_MENU_SETTINGS_LANGUAGE: ZS_Renderer(); break;
                     case ZSCOPE_ID_MENU_SETTINGS_RENDERER: ZS_Renderer(); break;
+                    case ZSCOPE_ID_MENU_SETTINGS_FRAMERATE: ZS_FramerateToggle(); break;
                     case ZSCOPE_ID_HUD_MENU: ZSUSR_Menu(ZSCOPE_MENU_TOGGLE); break;
                     case ZSCOPE_ID_HUD_CAPTURE: ZSDEV_Capture(-1); break;
                     case ZSCOPE_ID_HUD_RECORD: ZSDEV_Record(-1); break;

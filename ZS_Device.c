@@ -144,7 +144,7 @@ void ZSDEV_LoadGUI(void) {
 void ZSDEV_Connect(const ZT_CHAR* iAddress, ZT_INDEX iSpeed, ZT_FLAG iChannels) {
     ZSDEV_Free();
     if ((gDev.hardware = ZDX_New(iAddress, ZDX_DEVICE_TYPE_AT328P)) != NULL) {
-        ZDX_Assign(gDev.hardware, ZDX_CHANNEL_TYPE_ANALOG_IN, iChannels, iSpeed);
+        ZDX_Assign(gDev.hardware, ZDX_TASK_ADC, iChannels, iSpeed);
         gDev.hardware->flag |= ZDX_DEVICE_FLAG_UNBUFFERED;
         if ((gDev.data = ZDX_DataNew(gDev.hardware, iSpeed / 10)) != NULL) {
             if ((gDev.recorder = ZWV_New(6 * gDev.data->block.xU * gDev.data->block.yU)) != NULL) {
@@ -155,9 +155,9 @@ void ZSDEV_Connect(const ZT_CHAR* iAddress, ZT_INDEX iSpeed, ZT_FLAG iChannels) 
                     gDev.trigger->level.yU = (0x1 << gDev.data->resolution) >> 1;
                     ZDX_Connect(gDev.hardware);
                     if (gDev.hardware->interface.runtime != NULL) {
-                        gDev.timestamp.connect = ZTL_Tick();
                         ZSDEV_Capture(ZT_TRUE);
                         ZSDEV_Record(ZT_FALSE);
+                        gDev.timestamp.connect = ZTL_Tick();
                         return;
                     }
                     ZSDEV_FreeTrigger();
