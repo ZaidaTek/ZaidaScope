@@ -12,7 +12,7 @@ Use your PC and Arduino as an Oscilloscope!
 
 ## Features
 
-1) 1-100 kHz sampling rate ~~(up to 75-80 kHz for 2+ channels)~~ since v210603 full 100kS/s across all channels!
+1) 1-100 kHz sampling rate (~~up to 75-80 kHz for 2+ channels~~ since v210603 full 100kS/s across all channels!)
 
 2) Up to eight channels simultaneously
 
@@ -28,7 +28,7 @@ Use your PC and Arduino as an Oscilloscope!
 
 2) Extract to folder of your choice
 
-3) Upload included `at328p.ino` file to your Arduino Uno/Nano or similar AT328P (**Note:** Please don't forget to reupload this if you're upgrading!)
+3) Upload included `at328p.ino` file to your Arduino Uno/Nano or similar AT328P (**Note: Please don't forget to reupload this if you're upgrading!**)
 
 4) Execute `ZS.exe`, choose your COM-Port, channel config and sampling rate, and click *Connect*
 
