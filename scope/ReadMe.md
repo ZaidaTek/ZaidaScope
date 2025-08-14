@@ -24,7 +24,7 @@ Use your PC and Arduino as an Oscilloscope!
 
 ## Installation
 
-1) Download the [latest version under the Releases section](https://github.com/ZaidaTek/ZaidaScope/releases)
+1) Download the [latest release](https://github.com/ZaidaTek/ZaiDAQ/releases/tag/zaidascope-latest)
 
 2) Extract to folder of your choice
 
