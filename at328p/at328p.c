@@ -1,9 +1,11 @@
-/*** Copyright (C) 2019-2021 ZaidaTek and Andreas Riebesehl
+/*** Copyright (C) 2019-2025 ZaidaTek and Andreas Riebesehl
 **** This work is licensed under: Creative Commons Attribution-NoDerivatives 4.0 International Public License
 **** For full license text, please visit: https://creativecommons.org/licenses/by-nd/4.0/legalcode
 ***/
 
-// v210603
+// v250815 (functionally equivalent to v210603, different formatting)
+
+#include <avr/io.h>
 
 #define ZDX_MAX_CH 8
 #define ZDX_PACKET_BUFF 16
@@ -93,7 +95,7 @@ void ZDX_ADC_Main(void) {
 		while (!(TIFR1 & 0x2));
 		TIFR1 |= 0x2;
 	}
-	#undef mZDX_ADC_Main_INCREMENT()
+	#undef mZDX_ADC_Main_INCREMENT
 }
 void ZDX_DIO_Write(unsigned char iState) {
 	iState &= gDIO_Config;
@@ -151,7 +153,7 @@ void ZDX_PWM_Init(void) {
 	}
 void ZDX_PWM8_Main(void) {mZDX_PWM_MAIN(unsigned char);}
 void ZDX_PWM16_Main(void) {mZDX_PWM_MAIN(unsigned int);}
-#undef mZDX_PWM_MAIN()
+#undef mZDX_PWM_MAIN
 void ZDX_PWM_Main(void) {
 	if (gPWM_Depth > 0xff) {
 		ZDX_PWM16_Main();
