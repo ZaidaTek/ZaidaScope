@@ -6,7 +6,7 @@ Use your PC and Arduino as an Oscilloscope!
 
 
 
-![ZaidaScope](https://github.com/ZaidaTek/ZaidaScope/blob/master/scope/__latest.png "")
+![ZaidaScope](https://github.com/ZaidaTek/ZaidaScope/blob/master/doc/scope/cover.png "")
 
 
 
@@ -80,13 +80,13 @@ When using higher sampling rates, it may be necessary to add a voltage follower 
 
 The screenshot above was created by reading my laptop's left channel audio output at a rate of 40 kHz while continously looping a generated 440 Hz sine wave using the program Audacity. This is how it the setup looks like:
 
-![ZaidaScope](https://github.com/ZaidaTek/ZaidaScope/blob/master/scope/__photo-setup.jpg "")
+![ZaidaScope](https://github.com/ZaidaTek/ZaidaScope/blob/master/doc/scope/setup-photo.jpg "")
 
 The AT328P used on this board is an Arduino Pro Mini as well as a FTDI232 USB/Serial converter for communication, an SX1308 DC-DC step-up boost converter for powering the two LM324A op-amps, a number of diodes, resistors, capacitors and an LED.
 
 The simplified electric schematic for the above is as follows:
 
-![ZaidaScope](https://github.com/ZaidaTek/ZaidaScope/blob/master/scope/__screenshot-schematic.png "")
+![ZaidaScope](https://github.com/ZaidaTek/ZaidaScope/blob/master/doc/scope/setup-schematic.png "")
 
 C1, R1 and R2 are required in order to get the audio signal centered around 2.5V, instead of the normal 0V.
 
