@@ -122,7 +122,7 @@ Visit our [website](https://zaidatek.net/) for contact details if you require a 
 
 ## Philosophy
 
-There are possibly unaddressed clarifications, particularly with regards to licensing and the corporate nature of one of the legal owners of the rights to this work.
+There are possibly unaddressed clarifications, particularly with regards to licensing and the commercial nature of one of the legal owners of the rights to this work.
 
 Some of those might be addressed by the following statements:
 
@@ -133,6 +133,13 @@ Some of those might be addressed by the following statements:
 In "everyday tech jargon," the *intents* of the authors can be described as: You may use the functions, structs, code in the .dll, .so, etc. files with your own programs or write your own programs that use these dynamic libraries, but you are **not** allowed to **change *and* share**  the code (but you *are* allowed to change, just *never share your changes*, meaning sharing a modified version of ZaidaScope is prohibited, **but** sharing the original ZaidaScope *and* your own custom programs, which possibly dynamically interface with ZaidaScope or its libraries, is not).
 
 The authors' intent however does not actually intend to include the sharing of modified configuration files, which could strictly possibly fall under violation of the 'no derivates'-clause; this would be an unintended collateral consequence of the license.
+
+Furthermore, users using the libraries in the non-prohibited form of dynamic linking and distributing their creations may do so **without their creations being subject to be subjected to the same terms of ZaidaScope** or its libraries; however, as the distributed software will depend on ZaidaScope and its libraries, users of that software must accept the terms of ZaidaScope's license as well.
+
+This is the *philosophical* part of this read-me, so I'll just be blunt: You can write, as a company for profit, software that uses e.g. ZDX.dll and keep that software closed-source and proprietary, but your clients using ZDX.dll must agree to using ZDX.dll according to its own license. You **cannot** distribute a modified ZDX.dll, but you may distribute the original ZDX.dll (with your proprietary program), but then you **must** say that your program uses ZDX.dll and if your users use your custom programs that use ZDX.dll, then you must ask them first to accept the terms of ZDX.dll as well (which implies that your users must also accept the license terms of ZDX.dll, in order to use your custom programs based on ZDX.dll, in addition to your own custom program's license).
+
+Finally, the authors would also like to remark, that the open nature of this project's philosophy, does not, in any way, necessarily reflect upon the general philosophy of the authors.
+
 
 
 ## License
