@@ -62,6 +62,16 @@ Use your PC and Arduino as an Oscilloscope!
 
 
 
+## Linux
+
+As of August 2025, there is at least one known configuration of [ZaidaScope being operable in Linux with Wine](https://github.com/ZaidaTek/ZaidaScope/blob/master/doc/scope/setup-linux.png), however, the following limitations were applicable:
+
+1) the program requires `Renderer` to be set to `System` (this can be toggled live and `OpenGL` may or may not work with possibly missing packages, e.g. try `winetricks`, etc.)
+
+2) changing sampling rate/channel config may not work and instead require program restart and/or native Linux program interfacing with COM-port (e.g. uploading embedded code via IDE) as a workaround COM-port 'reset' method
+
+
+
 ## Version History
 
 **v210603:** Fixed and optimized AT328P's code, full 100kS/s rate across all channels and no "rate hole" at 30kHz, added FPS-cap in settings to reduce CPU-load
@@ -97,16 +107,6 @@ Protecting the input signal from UV/OV is important, because the LM324A op-amp c
 The LM324A is configured in a voltage follower/unity gain configuration, and thus provides the measurement signal with a higher impedance than a raw connection to the AT328P's analog input. In order to correctly mirror an input signal up to 5V, the op-amp must be powered by a voltage higher than 5V (V_Boost). The exact voltage depends on the type of op-amp used and also individually varies from op-amp to op-amp. An SX1308 DC-DC Step-Up module was used for this purpose, and in this case provides the LM324A with about 6.3V. A higher voltage, such as 12V, can be used, if the circuit's integrity can be guaranteed.
 
 Be advised that if the circuit's integrity is compromised, the op-amp may output V_Boost into the AT328P, and damage it.
-
-
-
-## Linux
-
-As of August 2025, there is at least one known configuration of [ZaidaScope being operable in Linux with Wine](https://github.com/ZaidaTek/ZaidaScope/blob/master/doc/scope/setup-linux.png), however, the following limitations were applicable:
-
-1) the program requires `Renderer` to be set to `System` (this can be toggled live and `OpenGL` may or may not work with possibly missing packages, e.g. try `winetricks`, etc.)
-
-2) changing sampling rate/channel config may not work and instead require program restart and/or native Linux program interfacing with COM-port (e.g. uploading embedded code via IDE) as a workaround COM-port 'reset' method
 
 
 
