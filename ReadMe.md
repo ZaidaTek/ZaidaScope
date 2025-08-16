@@ -10,7 +10,7 @@
 
 ## Latest
 
-![testing zdaq](https://github.com/ZaidaTek/ZaidaScope/blob/master/doc/blog/2025-08-15_floating.png "here?")
+![image doc/blog/2025-08-15_floating.png](https://github.com/ZaidaTek/ZaidaScope/blob/master/doc/blog/2025-08-15_floating.png "First ADC-sample is a 'wraparound discardable.'")
 
 `2025-08-15` -- ZaidaScope appears to be functional in [Linux with Wine](scope/ReadMe.md#linux)
 
