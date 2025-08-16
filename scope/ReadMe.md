@@ -100,6 +100,16 @@ Be advised that if the circuit's integrity is compromised, the op-amp may output
 
 
 
+## Linux
+
+As of August 2025, there is at least one known configuration of [ZaidaScope being operable in Linux with Wine](https://github.com/ZaidaTek/ZaidaScope/blob/master/doc/scope/setup-linux.png), however, the following limitations were applicable:
+
+1) the program requires `Renderer` to be set to `System` (this can be toggled live and `OpenGL` may or may not work with possibly missing packages, e.g. try `winetricks`, etc.)
+
+2) changing sampling rate/channel config may not work and instead require program restart and/or native Linux program interfacing with COM-port (e.g. uploading embedded code via IDE) as a workaround COM-port 'reset' method
+
+
+
 ## Background
 
 ZaidaScope is an open-source software that was born out of the libraries created for a commercial client's request for a **low-cost alternative to using traditional and expensive aftermarket DAQ hard- and software** to monitor analog input channels on a PC.
@@ -108,6 +118,21 @@ The AT328P was chosen, as its low cost, abundance, bit-depth and sampling rate w
 
 Visit our [website](https://zaidatek.net/) for contact details if you require a similar custom solution.
 
+
+
+## Philosophy
+
+There are possibly unaddressed clarifications, particularly with regards to licensing and the corporate nature of one of the legal owner of the rights to this work.
+
+Some of those might be addressed by the following statements:
+
+1) Both rights holders intend other users and developers to be able to dynamically link to the work
+
+2) A 'no derivates'-type of license was chosen with the intention of inhibiting a runaway effect of downstream dependency that could arise due to modification of the work
+
+In "everyday tech jargon," the *intents* of the authors can be described as: You may use the functions, structs, code in the .dll, .so, etc. files with your own programs or write your own programs that use these dynamic libraries, but you are **not** allowed to **change *and* share**  the code (but you *are* allowed to change, just *never share your changes*, meaning sharing a modified version of ZaidaScope is prohibited, sharing the original ZaidaScope *and* your own custom programs that possibly dynamically interface with ZaidaScope or its libraries, is not).
+
+The authors' intent however does not actually intend to include the sharing of modified configuration files, which could strictly possibly fall under violation of the 'no derivates'-clause; this would be an unintended collateral consequence of the license.
 
 
 ## License
