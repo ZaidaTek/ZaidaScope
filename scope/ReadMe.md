@@ -12,7 +12,7 @@ Use your PC and Arduino as an Oscilloscope!
 
 ## Features
 
-+ 1-100 kHz sampling rate (~~up to 75-80 kHz for 2+ channels~~ since v210603 full 100kS/s across all channels!)
++ 1-100 kHz combined sampling rate
 
 + Up to eight channels simultaneously
 
