@@ -46,7 +46,7 @@ Use your PC and Arduino as an Oscilloscope!
 
 1) If your Arduino uses an FTDI USB/Serial Chip, you need to **adjust latency from the default 16 ms to 1 ms for best performance**. To do this, go to Device Manager, open COM port, go to Port Settings, click Advanced and adjust latency to 1 ms. USB/Serial chip CH340 does not have this issue, but has many COM communication errors at higher sampling rates.
 
-2) For higher sampling rates you may need to **add a voltage follower to your signal**, especially if your signal is high impedance, because the internal impedance of the Arduino will be very low at higher sampling rates. Otherwise, your signal can drop to zero volts. See [Electrical](#Electrical) below for details on this.
+2) For higher sampling rates you may need to **add a voltage follower to your signal**, especially if your signal is high impedance, because the internal impedance of the Arduino will be very low at higher sampling rates. Otherwise, your signal can drop to zero volts. See [Electrical](#electrical) below for details on this.
 
 3) Since v210419, the included configuration file instructs the program to use the **OpenGL renderer**. Should it not start because of this, simply delete `ZS.cfg`, as the program will then create a new one with the default settings, which uses Windows' built-in GDI system renderer instead.
 

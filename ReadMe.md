@@ -10,13 +10,13 @@
 
 ## Splash
 
-![testing zdaq](https://github.com/ZaidaTek/ZaidaScope/blob/master/doc/blog.png "")
+![testing zdaq](https://github.com/ZaidaTek/ZaidaScope/blob/master/doc/blog/2025-08-15_floating.png)
 
 
 
 ## Latest
 
-`2025-08-15` -- ZaidaScope appears to be functional in [Linux with Wine](./scope/ReadMe.md#Linux)
+`2025-08-15` -- ZaidaScope appears to be functional in [Linux with Wine](scope/ReadMe.md#linux)
 
 `2025-08-14` -- Renamed to 'ZaiDAQ'
 
