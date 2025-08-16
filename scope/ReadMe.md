@@ -122,7 +122,7 @@ Visit our [website](https://zaidatek.net/) for contact details if you require a 
 
 ## Philosophy
 
-There are possibly unaddressed clarifications, particularly with regards to licensing and the corporate nature of one of the legal owner of the rights to this work.
+There are possibly unaddressed clarifications, particularly with regards to licensing and the corporate nature of one of the legal owners of the rights to this work.
 
 Some of those might be addressed by the following statements:
 
@@ -130,7 +130,7 @@ Some of those might be addressed by the following statements:
 
 2) A 'no derivates'-type of license was chosen with the intention of inhibiting a runaway effect of downstream dependency that could arise due to modification of the work
 
-In "everyday tech jargon," the *intents* of the authors can be described as: You may use the functions, structs, code in the .dll, .so, etc. files with your own programs or write your own programs that use these dynamic libraries, but you are **not** allowed to **change *and* share**  the code (but you *are* allowed to change, just *never share your changes*, meaning sharing a modified version of ZaidaScope is prohibited, sharing the original ZaidaScope *and* your own custom programs that possibly dynamically interface with ZaidaScope or its libraries, is not).
+In "everyday tech jargon," the *intents* of the authors can be described as: You may use the functions, structs, code in the .dll, .so, etc. files with your own programs or write your own programs that use these dynamic libraries, but you are **not** allowed to **change *and* share**  the code (but you *are* allowed to change, just *never share your changes*, meaning sharing a modified version of ZaidaScope is prohibited, **but** sharing the original ZaidaScope *and* your own custom programs, which possibly dynamically interface with ZaidaScope or its libraries, is not).
 
 The authors' intent however does not actually intend to include the sharing of modified configuration files, which could strictly possibly fall under violation of the 'no derivates'-clause; this would be an unintended collateral consequence of the license.
 
