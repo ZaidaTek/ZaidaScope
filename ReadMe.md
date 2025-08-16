@@ -10,7 +10,7 @@
 
 ## Splash
 
-![testing zdaq](https://github.com/ZaidaTek/ZaidaScope/blob/master/doc/blog.png)
+![testing zdaq](https://github.com/ZaidaTek/ZaidaScope/blob/master/doc/blog.png "")
 
 
 
