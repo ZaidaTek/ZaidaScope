@@ -8,8 +8,6 @@
 
 
 
-## Splash
-
 ![testing zdaq](https://github.com/ZaidaTek/ZaidaScope/blob/master/doc/blog/2025-08-15_floating.png)
 
 
