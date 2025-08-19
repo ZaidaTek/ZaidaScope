@@ -10,9 +10,9 @@
 
 ## Latest
 
-`2025-0818` -- Not sure if EMI is causing packet loss, or if changing signals' packets interpreted within Wine somehow result in packets interpreted as loss
+`2025-08-17` -- Not sure if EMI is causing packet loss, or if changing signals' packets interpreted within Wine somehow result in packets interpreted as loss
 
-![image doc/blog/2025-08-18_packet-loss.png](https://github.com/ZaidaTek/ZaidaScope/blob/master/doc/blog/2025-08-18_packet-loss.png "It's still that one PCB you see in the pic in the Electrical part of the ReadMe.")
+![image doc/blog/2025-08-17_packet-loss.png](https://github.com/ZaidaTek/ZaidaScope/blob/master/doc/blog/2025-08-17_packet-loss.png "It's still that one PCB you see in the pic in the Electrical part of the ReadMe.")
 
 
 `2025-08-15` -- ZaidaScope appears to be functional in [Linux with Wine](scope/ReadMe.md#linux)
